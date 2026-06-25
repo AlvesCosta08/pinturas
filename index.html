@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acabamento, Pintura e Gesso com Excelência | Portfólio Premium</title>
+    <meta name="description" content="Transformamos ambientes com excelência, organização e entrega garantida. Pintura, Gesso e Acabamentos de Alto Padrão.">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0F172A', // Azul Escuro (Confiança/Premium)
+                        secondary: '#D4AF37', // Dourado (Alto Padrão)
+                        accent: '#25D366', // Verde WhatsApp
+                    },
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        body: ['Open Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
+        .hero-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- NAVBAR -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 font-heading font-bold text-xl text-primary">
+                    Acabamento<span class="text-secondary">Premium</span>
+                </div>
+                <div class="hidden md:flex space-x-8 font-semibold text-gray-600">
+                    <a href="#diferenciais" class="hover:text-secondary transition">Diferenciais</a>
+                    <a href="#servicos" class="hover:text-secondary transition">Serviços</a>
+                    <a href="#processo" class="hover:text-secondary transition">Metodologia</a>
+                    <a href="#contato" class="hover:text-secondary transition">Contato</a>
+                </div>
+                <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." target="_blank" class="bg-accent hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full transition flex items-center gap-2">
+                    <i class="fab fa-whatsapp"></i> Orçamento
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero-bg pt-32 pb-20 px-4 text-white">
+        <div class="max-w-7xl mx-auto text-center">
+            <span class="bg-secondary text-primary font-bold px-4 py-1 rounded-full text-sm uppercase tracking-wider">Excelência e Organização Garantida</span>
+            <h1 class="font-heading text-4xl md:text-6xl font-extrabold mt-6 leading-tight">
+                Transformamos Ambientes com <span class="text-secondary">Alto Padrão</span>
+            </h1>
+            <p class="text-lg md:text-xl mt-6 max-w-3xl mx-auto text-gray-300">
+                Especialistas em Pintura, Gesso e Acabamentos. Entregamos organização, limpeza e respeito ao seu imóvel. Sem improvisos, atrasos ou retrabalho.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20agendar%20uma%20visita%20técnica." target="_blank" class="bg-accent hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full text-lg transition shadow-lg flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp text-2xl"></i> Solicitar Visita Técnica
+                </a>
+                <a href="#servicos" class="border-2 border-white hover:bg-white hover:text-primary text-white font-bold py-4 px-8 rounded-full text-lg transition">
+                    Nossos Serviços
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- DIFERENCIAIS -->
+    <section id="diferenciais" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary">Por que nos escolher?</h2>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Sabemos que obras geram transtornos. Por isso, nosso foco é garantir uma experiência segura, limpa e impecável.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-xl transition text-center">
+                    <div class="w-16 h-16 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-primary mb-2">Atendimento Consultivo</h3>
+                    <p class="text-gray-600 text-sm">Avaliamos o ambiente e apresentamos a melhor solução técnica antes de executar.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-xl transition text-center">
+                    <div class="w-16 h-16 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-primary mb-2">Limpeza Permanente</h3>
+                    <p class="text-gray-600 text-sm">Ambiente organizado diariamente. Proteção total de pisos, móveis e esquadrias.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-xl transition text-center">
+                    <div class="w-16 h-16 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-primary mb-2">Cumprimento de Prazos</h3>
+                    <p class="text-gray-600 text-sm">Planejamento detalhado para garantir previsibilidade e eficiência na entrega.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-xl transition text-center">
+                    <div class="w-16 h-16 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-primary mb-2">Solução Completa</h3>
+                    <p class="text-gray-600 text-sm">Da preparação da superfície ao acabamento final. Você não precisa contratar outros.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary">Nossas Especialidades</h2>
+                <p class="text-gray-600 mt-4">Soluções completas para obras residenciais, comerciais e corporativas.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Linha 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pintura Profissional" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-heading text-xl font-bold text-primary mb-3">Pintura Profissional</h3>
+                        <ul class="text-gray-600 space-y-2 text-sm">
+                            <li><i class="fas fa-check text-secondary mr-2"></i> Residencial e Comercial</li>
+                            <li><i class="fas fa-check text-secondary mr-2"></i> Fachadas e Condomínios</li>
+                            <li><i class="fas fa-check text-secondary mr-2"></i> Texturas e Grafiato</li>
+                            <li><i class="fas fa-check text-secondary mr-2"></i> Acabamento Impecável</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Linha 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gesso e Drywall" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-heading text-xl font-bold text-primary mb-3">Gesso e Drywall</h3>
+                        <ul class="text-gray-600 space-y-2 text-sm">
+                            <li><i class="fas fa-check text-secondary mr-2"></i> Forros e Sancas Iluminadas</li>
+                            <li><i class="fas fa-check text-secondary mr-2"></i> Divisórias em Drywall</li>
+                            <li><i class="fas fa-check text-secondary mr-2"></i> Nichos e Molduras</li>
+                            <li><i class="fas fa-check text-secondary mr-2"></i> Projetos Luminotécnicos</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Linha 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Acabamentos Especiais" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-heading text-xl font-bold text-primary mb-3">Acabamentos Especiais</h3>
+                        <ul class="text-gray-600 space-y-2 text-sm">
+                            <li><i class="fas fa-check text-secondary mr-2"></i> Massa Corrida e Lisa</li>
+                            <li><i class="fas fa-check text-secondary mr-2"></i> Revestimentos Decorativos</li>
+                            <li><i class="fas fa-check text-secondary mr-2"></i> Efeitos em Mármore</li>
+                            <li><i class="fas fa-check text-secondary mr-2"></i> Reparos e Retoques Finos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESSO DE TRABALHO -->
+    <section id="processo" class="py-20 bg-primary text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold">Nossa Metodologia</h2>
+                <p class="text-gray-300 mt-4 max-w-2xl mx-auto">"Obra organizada é sinônimo de respeito ao cliente."</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-6 text-center">
+                <div class="p-4">
+                    <div class="w-12 h-12 bg-secondary text-primary font-bold rounded-full flex items-center justify-center mx-auto mb-4 text-xl">1</div>
+                    <h4 class="font-bold mb-2">Visita Técnica</h4>
+                    <p class="text-sm text-gray-400">Análise detalhada do ambiente.</p>
+                </div>
+                <div class="p-4">
+                    <div class="w-12 h-12 bg-secondary text-primary font-bold rounded-full flex items-center justify-center mx-auto mb-4 text-xl">2</div>
+                    <h4 class="font-bold mb-2">Planejamento</h4>
+                    <p class="text-sm text-gray-400">Cronograma e orçamento claros.</p>
+                </div>
+                <div class="p-4">
+                    <div class="w-12 h-12 bg-secondary text-primary font-bold rounded-full flex items-center justify-center mx-auto mb-4 text-xl">3</div>
+                    <h4 class="font-bold mb-2">Proteção</h4>
+                    <p class="text-sm text-gray-400">Isolamento e cobertura total.</p>
+                </div>
+                <div class="p-4">
+                    <div class="w-12 h-12 bg-secondary text-primary font-bold rounded-full flex items-center justify-center mx-auto mb-4 text-xl">4</div>
+                    <h4 class="font-bold mb-2">Execução</h4>
+                    <p class="text-sm text-gray-400">Padrões rigorosos de qualidade.</p>
+                </div>
+                <div class="p-4">
+                    <div class="w-12 h-12 bg-secondary text-primary font-bold rounded-full flex items-center justify-center mx-auto mb-4 text-xl">5</div>
+                    <h4 class="font-bold mb-2">Entrega</h4>
+                    <p class="text-sm text-gray-400">Limpeza final e conferência.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL / CONTATO -->
+    <section id="contato" class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary mb-4">Pronto para valorizar seu imóvel?</h2>
+            <p class="text-gray-600 mb-8 text-lg">Mais do que acabamento, entregamos valorização, organização e excelência em cada detalhe.</p>
+            <a href="https://wa.me/5500000000000?text=Olá!%20Vi%20o%20site%20e%20gostaria%20de%20um%20orçamento." target="_blank" class="inline-block bg-accent hover:bg-green-600 text-white font-bold py-5 px-10 rounded-full text-xl transition shadow-2xl transform hover:scale-105">
+                <i class="fab fa-whatsapp mr-2"></i> Falar com um Especialista Agora
+            </a>
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-600">
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fas fa-phone-alt text-secondary"></i> Atendimento Rápido
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fas fa-map-marker-alt text-secondary"></i> Visita Técnica Gratuita
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fas fa-calendar-alt text-secondary"></i> Agendamento Facilitado
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary text-gray-400 py-8 text-center">
+        <p class="font-heading font-bold text-white text-lg mb-2">Acabamento<span class="text-secondary">Premium</span></p>
+        <p class="text-sm">&copy; 2024 - Todos os direitos reservados. | Pintura, Gesso e Acabamentos de Alto Padrão.</p>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE WHATSAPP -->
+    <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20um%20orçamento." target="_blank" class="fixed bottom-6 right-6 bg-accent hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl text-3xl z-50 transition transform hover:scale-110 animate-bounce">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
