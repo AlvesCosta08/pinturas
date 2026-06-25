@@ -1,23 +1,24 @@
 services:
-  # ==========================================
-  # FRONTEND (Nginx servindo seu HTML/React)
-  # ==========================================
+  # 🎨 FRONTEND (Usa o Dockerfile da raiz)
   frontend:
-    build: .
+    build:
+      context: .           # O contexto é a raiz do projeto
+      dockerfile: Dockerfile # Usa o Dockerfile que está na raiz
     container_name: alves-frontend
     ports:
       - "80:80"
     restart: always
+    depends_on:
+      - backend
 
-  # ==========================================
-  # BACKEND (Node.js / Express) - FUTURO
-  # ==========================================
-  # Quando você criar o backend, basta descomentar estas linhas!
-  # backend:
-  #   build: ./backend
-  #   container_name: alves-backend
-  #   ports:
-  #     - "3000:3000"
-  #   environment:
-  #     - NODE_ENV=production
-  #   restart: always
+  # ⚙️ BACKEND (Usa o Dockerfile de dentro da pasta backend)
+  backend:
+    build:
+      context: ./backend   # O contexto é a pasta backend
+      dockerfile: Dockerfile # Usa o Dockerfile que está dentro de backend/
+    container_name: alves-backend
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    restart: always

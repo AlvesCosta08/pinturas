@@ -1,12 +1,17 @@
-# 1. Imagem leve do Nginx
+# 1. Usa a imagem leve do Nginx
 FROM nginx:alpine
 
-# 2. Copia APENAS o conteúdo da pasta 'frontend' para o diretório padrão do Nginx
-# (Aqui está o segredo para o futuro: quando for React, o build gerará os arquivos aqui)
-COPY ./frontend /usr/share/nginx/html
+# 2. Remove os arquivos de teste padrão do Nginx
+RUN rm -rf /usr/share/nginx/html/*
 
-# 3. Expõe a porta 80
+# 3. Copia a configuração customizada do nginx (que está dentro da pasta frontend)
+COPY ./frontend/nginx.conf /etc/nginx/conf.d/default.conf
+
+# 4. Copia TODO o conteúdo da pasta 'frontend' (incluindo o index.html) para o diretório do Nginx
+COPY ./frontend/ /usr/share/nginx/html/
+
+# 5. Expõe a porta 80
 EXPOSE 80
 
-# 4. Inicia o Nginx
+# 6. Inicia o Nginx
 CMD ["nginx", "-g", "daemon off;"]
