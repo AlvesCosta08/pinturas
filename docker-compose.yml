@@ -1,0 +1,23 @@
+services:
+  # ==========================================
+  # FRONTEND (Nginx servindo seu HTML/React)
+  # ==========================================
+  frontend:
+    build: .
+    container_name: alves-frontend
+    ports:
+      - "80:80"
+    restart: always
+
+  # ==========================================
+  # BACKEND (Node.js / Express) - FUTURO
+  # ==========================================
+  # Quando você criar o backend, basta descomentar estas linhas!
+  # backend:
+  #   build: ./backend
+  #   container_name: alves-backend
+  #   ports:
+  #     - "3000:3000"
+  #   environment:
+  #     - NODE_ENV=production
+  #   restart: always
