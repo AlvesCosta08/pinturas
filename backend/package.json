@@ -1,0 +1,26 @@
+{
+  "name": "alves-backend",
+  "version": "1.0.0",
+  "description": "API para o portfólio de Pinturas e Acabamentos Premium",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "pintura",
+    "gesso",
+    "acabamento",
+    "api",
+    "portfolio"
+  ],
+  "author": "Alves Costa",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
