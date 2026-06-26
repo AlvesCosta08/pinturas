@@ -8,7 +8,12 @@ const path = require('path');
 const router = express.Router();
 
 const JWT_SECRET = process.env.JWT_SECRET || 'segredo_super_secreto_alves';
-const DB_FILE = path.join(__dirname, '../../portfolio.json');
+const DB_FILE = path.join(__dirname, '../../data/portfolio.json');
+// Criar pasta data se não existir
+const dataDir = path.join(__dirname, '../../data');
+if (!fs.existsSync(dataDir)) {
+    fs.mkdirSync(dataDir, { recursive: true });
+}
 
 // ==========================================
 // CONFIGURAÇÃO DO CLOUDINARY (VIA VARIÁVEIS DE AMBIENTE)

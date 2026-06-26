@@ -12,19 +12,30 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-// Servir arquivos estáticos (imagens do portfólio)
-app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
+// 🎨 SERVE ARQUIVOS ESTÁTICOS (seu site HTML)
+app.use(express.static(path.join(__dirname, '../public')));
 
-// Rotas
+// ⚙️ ROTAS DA API
 app.use('/api/auth', authRoutes);
 app.use('/api/portfolio', portfolioRoutes);
 
-// Criar pasta de uploads se não existir
-const uploadsDir = path.join(__dirname, '../uploads');
+// Criar pasta de uploads se não existir (fallback local)
+const uploadsDir = path.join(__dirname, '../public/uploads');
 if (!fs.existsSync(uploadsDir)) {
     fs.mkdirSync(uploadsDir, { recursive: true });
 }
 
+// 🎯 Rota para o admin.html
+app.get('/admin', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/admin.html'));
+});
+
+// 🎯 Para qualquer rota não-API, serve o index.html (SPA fallback)
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/index.html'));
+});
+
 app.listen(PORT, () => {
-    console.log(` Servidor Node.js rodando na porta ${PORT}`);
+    console.log(`🚀 Servidor rodando na porta ${PORT}`);
+    console.log(`📁 Servindo site da pasta: ${path.join(__dirname, '../public')}`);
 });

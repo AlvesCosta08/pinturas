@@ -1,7 +1,6 @@
 {
   "name": "alves-backend",
   "version": "1.0.0",
-  "description": "API para o portfólio de Pinturas e Acabamentos Premium",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
