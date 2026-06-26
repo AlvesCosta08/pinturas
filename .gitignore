@@ -1,54 +1,17 @@
-# ==========================================
-# DEPENDÊNCIAS
-# ==========================================
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-package-lock.json
-yarn.lock
-
-# ==========================================
-# VARIÁVEIS DE AMBIENTE (NUNCA SUBIR SENHAS)
-# ==========================================
+# Variáveis de ambiente (NUNCA subir credenciais)
 .env
 .env.local
 .env.production
 backend/.env
 
-# ==========================================
-# ARQUIVOS DE SISTEMA
-# ==========================================
+# Dependências
+node_modules/
+npm-debug.log*
+
+# Arquivos de sistema
 .DS_Store
 Thumbs.db
-*.swp
-*.swo
-*~
 
-# ==========================================
-# IDE E EDITORES
-# ==========================================
-.vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
-
-# ==========================================
-# LOGS E TEMPORÁRIOS
-# ==========================================
-logs/
-*.log
-tmp/
-temp/
-
-# ==========================================
-# DOCKER (Volumes e dados locais)
-# ==========================================
-docker-compose.override.yml
-
-# ==========================================
-# BUILD E CACHE
-# ==========================================
-dist/
-build/
-.cache/
+# Banco de dados local
+portfolio.json
+backend/portfolio.json

@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acabamento, Pintura e Gesso com Excelência | Portfólio Premium</title>
+    <title>AJ Artes & Decorações | Acabamento, Pintura e Gesso com Excelência</title>
     <meta name="description" content="Transformamos ambientes com excelência, organização e entrega garantida. Pintura, Gesso e Acabamentos de Alto Padrão em Fortaleza e Região.">
     
-    <!-- SEO e Open Graph (para WhatsApp e Facebook) -->
-    <meta property="og:title" content="Acabamento Premium - Pintura e Gesso de Alto Padrão">
+    <!-- SEO e Open Graph -->
+    <meta property="og:title" content="AJ Artes & Decorações - Pintura e Gesso de Alto Padrão">
     <meta property="og:description" content="Especialistas em Pintura, Gesso e Acabamentos. Organização, limpeza e respeito ao seu imóvel.">
     <meta property="og:type" content="website">
     
@@ -45,7 +45,6 @@
             background-size: cover;
             background-position: center;
         }
-        /* Animação suave para o menu mobile */
         #mobile-menu {
             transition: max-height 0.3s ease-in-out;
             max-height: 0;
@@ -54,28 +53,34 @@
         #mobile-menu.open {
             max-height: 500px;
         }
+        /* Estilo para o estado ativo dos filtros */
+        .filter-btn.active {
+            background-color: #D4AF37 !important;
+            color: white !important;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- NAVBAR COM MENU MOBILE -->
+    <!-- NAVBAR -->
     <nav class="bg-white shadow-md fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <a href="#" class="flex-shrink-0 font-heading font-bold text-xl text-primary">
-                    AJ<span class="text-secondary">Artes & Decorações</span>
+                    AJ<span class="text-secondary"> Artes & Decorações</span>
                 </a>
                 
                 <!-- Links Desktop -->
-                <div class="hidden md:flex space-x-8 font-semibold text-gray-600">
+                <div class="hidden md:flex space-x-6 font-semibold text-gray-600 text-sm">
                     <a href="#diferenciais" class="hover:text-secondary transition">Diferenciais</a>
                     <a href="#servicos" class="hover:text-secondary transition">Serviços</a>
+                    <a href="#portfolio" class="hover:text-secondary transition">Portfólio</a>
                     <a href="#processo" class="hover:text-secondary transition">Metodologia</a>
                     <a href="#contato" class="hover:text-secondary transition">Contato</a>
                 </div>
 
                 <!-- Botão WhatsApp Desktop -->
-                <a href="https://wa.me/5585986217161?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="hidden md:flex bg-accent hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full transition items-center gap-2">
+                <a href="https://wa.me/5585986217161?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="hidden md:flex bg-accent hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full transition items-center gap-2 text-sm">
                     <i class="fab fa-whatsapp"></i> Orçamento
                 </a>
 
@@ -91,6 +96,7 @@
             <div class="px-4 py-3 space-y-3">
                 <a href="#diferenciais" class="block font-semibold text-gray-600 hover:text-secondary py-2">Diferenciais</a>
                 <a href="#servicos" class="block font-semibold text-gray-600 hover:text-secondary py-2">Serviços</a>
+                <a href="#portfolio" class="block font-semibold text-gray-600 hover:text-secondary py-2">Portfólio</a>
                 <a href="#processo" class="block font-semibold text-gray-600 hover:text-secondary py-2">Metodologia</a>
                 <a href="#contato" class="block font-semibold text-gray-600 hover:text-secondary py-2">Contato</a>
                 <a href="https://wa.me/5585986217161?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="block bg-accent hover:bg-green-600 text-white font-bold py-3 px-4 rounded-full transition text-center">
@@ -129,7 +135,6 @@
                 <p class="text-gray-600 mt-4 max-w-2xl mx-auto text-sm md:text-base">Sabemos que obras geram transtornos. Por isso, nosso foco é garantir uma experiência segura, limpa e impecável.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-                <!-- Card 1 -->
                 <div class="bg-gray-50 p-6 md:p-8 rounded-xl border border-gray-100 hover:shadow-xl transition text-center">
                     <div class="w-14 h-14 md:w-16 md:h-16 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-xl md:text-2xl">
                         <i class="fas fa-comments"></i>
@@ -137,7 +142,6 @@
                     <h3 class="font-heading font-bold text-lg text-primary mb-2">Atendimento Consultivo</h3>
                     <p class="text-gray-600 text-sm">Avaliamos o ambiente e apresentamos a melhor solução técnica antes de executar.</p>
                 </div>
-                <!-- Card 2 -->
                 <div class="bg-gray-50 p-6 md:p-8 rounded-xl border border-gray-100 hover:shadow-xl transition text-center">
                     <div class="w-14 h-14 md:w-16 md:h-16 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-xl md:text-2xl">
                         <i class="fas fa-broom"></i>
@@ -145,7 +149,6 @@
                     <h3 class="font-heading font-bold text-lg text-primary mb-2">Limpeza Permanente</h3>
                     <p class="text-gray-600 text-sm">Ambiente organizado diariamente. Proteção total de pisos, móveis e esquadrias.</p>
                 </div>
-                <!-- Card 3 -->
                 <div class="bg-gray-50 p-6 md:p-8 rounded-xl border border-gray-100 hover:shadow-xl transition text-center">
                     <div class="w-14 h-14 md:w-16 md:h-16 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-xl md:text-2xl">
                         <i class="fas fa-clock"></i>
@@ -153,7 +156,6 @@
                     <h3 class="font-heading font-bold text-lg text-primary mb-2">Cumprimento de Prazos</h3>
                     <p class="text-gray-600 text-sm">Planejamento detalhado para garantir previsibilidade e eficiência na entrega.</p>
                 </div>
-                <!-- Card 4 -->
                 <div class="bg-gray-50 p-6 md:p-8 rounded-xl border border-gray-100 hover:shadow-xl transition text-center">
                     <div class="w-14 h-14 md:w-16 md:h-16 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-xl md:text-2xl">
                         <i class="fas fa-tools"></i>
@@ -173,7 +175,6 @@
                 <p class="text-gray-600 mt-4 text-sm md:text-base">Soluções completas para obras residenciais, comerciais e corporativas.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-                <!-- Linha 1 -->
                 <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
                     <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pintura Profissional" class="w-full h-48 object-cover" loading="lazy">
                     <div class="p-6">
@@ -186,7 +187,6 @@
                         </ul>
                     </div>
                 </div>
-                <!-- Linha 2 -->
                 <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
                     <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gesso e Drywall" class="w-full h-48 object-cover" loading="lazy">
                     <div class="p-6">
@@ -199,7 +199,6 @@
                         </ul>
                     </div>
                 </div>
-                <!-- Linha 3 -->
                 <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
                     <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Acabamentos Especiais" class="w-full h-48 object-cover" loading="lazy">
                     <div class="p-6">
@@ -211,6 +210,35 @@
                             <li><i class="fas fa-check text-secondary mr-2"></i> Reparos e Retoques Finos</li>
                         </ul>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🆕 PORTFÓLIO / GALERIA -->
+    <section id="portfolio" class="py-16 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-2xl md:text-4xl font-bold text-primary">Nossos Projetos Recentes</h2>
+                <p class="text-gray-600 mt-4 text-sm md:text-base">Veja a transformação real dos nossos clientes.</p>
+            </div>
+
+            <!-- Filtros -->
+            <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-10" id="filters">
+                <button onclick="filterPortfolio('all', this)" class="filter-btn active px-4 py-2 rounded-full bg-primary text-white hover:bg-secondary transition text-sm">Todos</button>
+                <button onclick="filterPortfolio('Residencial', this)" class="filter-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-secondary hover:text-white transition text-sm">Residencial</button>
+                <button onclick="filterPortfolio('Comercial', this)" class="filter-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-secondary hover:text-white transition text-sm">Comercial</button>
+                <button onclick="filterPortfolio('Gesso', this)" class="filter-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-secondary hover:text-white transition text-sm">Gesso</button>
+                <button onclick="filterPortfolio('Fachada', this)" class="filter-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-secondary hover:text-white transition text-sm">Fachada</button>
+            </div>
+
+            <!-- Grid de Projetos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+                <!-- Mensagem quando não há projetos ainda -->
+                <div class="col-span-full text-center py-12 text-gray-500" id="portfolio-empty">
+                    <i class="fas fa-images text-5xl mb-4 text-gray-300"></i>
+                    <p class="text-lg">Em breve nossos projetos estarão aqui!</p>
+                    <p class="text-sm mt-2">Acompanhe nosso Instagram para ver novidades.</p>
                 </div>
             </div>
         </div>
@@ -277,7 +305,7 @@
 
     <!-- FOOTER -->
     <footer class="bg-primary text-gray-400 py-8 text-center">
-        <p class="font-heading font-bold text-white text-lg mb-2">Acabamento<span class="text-secondary">Premium</span></p>
+        <p class="font-heading font-bold text-white text-lg mb-2">AJ<span class="text-secondary"> Artes & Decorações</span></p>
         <p class="text-xs md:text-sm">&copy; 2024 - Todos os direitos reservados. | Pintura, Gesso e Acabamentos de Alto Padrão.</p>
     </footer>
 
@@ -303,7 +331,6 @@
             }
         });
 
-        // Fecha o menu ao clicar em um link
         const menuLinks = mobileMenu.querySelectorAll('a');
         menuLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -312,6 +339,87 @@
                 menuIcon.classList.add('fa-bars');
             });
         });
+    </script>
+
+    <!-- 🆕 SCRIPT DO PORTFÓLIO -->
+    <script>
+        async function loadPortfolio() {
+            try {
+                const res = await fetch('/api/portfolio');
+                if (!res.ok) throw new Error('Erro ao carregar portfólio');
+                
+                const projects = await res.json();
+                const grid = document.getElementById('portfolio-grid');
+                const emptyMsg = document.getElementById('portfolio-empty');
+                
+                // Se não houver projetos, mantém a mensagem padrão
+                if (!projects || projects.length === 0) {
+                    return;
+                }
+                
+                // Remove mensagem de vazio
+                if (emptyMsg) emptyMsg.remove();
+                
+                // Renderiza os projetos
+                grid.innerHTML = projects.map(project => `
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 portfolio-item" data-category="${project.category}">
+                        <div class="relative">
+                            <img src="${project.images[0]}" alt="${project.title}" class="w-full h-64 object-cover" loading="lazy">
+                            <span class="absolute top-4 left-4 bg-secondary text-primary text-xs font-bold px-3 py-1 rounded-full uppercase">${project.category}</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading font-bold text-xl text-primary mb-2">${project.title}</h3>
+                            <p class="text-gray-600 text-sm">${project.description || ''}</p>
+                            ${project.images.length > 1 ? `
+                                <div class="mt-4 flex gap-2 overflow-x-auto pb-2">
+                                    ${project.images.slice(1).map(img => `
+                                        <img src="${img}" alt="${project.title}" class="w-20 h-20 object-cover rounded-lg flex-shrink-0 cursor-pointer hover:opacity-80 transition" loading="lazy" onclick="openImageModal('${img}')">
+                                    `).join('')}
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                `).join('');
+                
+            } catch (error) {
+                console.error('Erro ao carregar portfólio:', error);
+            }
+        }
+
+        function filterPortfolio(category, btnElement) {
+            // Atualiza estado visual dos botões
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.add('bg-gray-200', 'text-gray-700');
+                btn.classList.remove('bg-primary', 'text-white');
+            });
+            btnElement.classList.add('active');
+            
+            // Filtra os projetos
+            const items = document.querySelectorAll('.portfolio-item');
+            let visibleCount = 0;
+            
+            items.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Modal simples para visualizar imagens em tela cheia
+        function openImageModal(src) {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-90 z-[100] flex items-center justify-center p-4 cursor-pointer';
+            modal.onclick = () => modal.remove();
+            modal.innerHTML = `<img src="${src}" class="max-w-full max-h-full object-contain">`;
+            document.body.appendChild(modal);
+        }
+
+        // Carrega o portfólio ao iniciar
+        document.addEventListener('DOMContentLoaded', loadPortfolio);
     </script>
 
 </body>

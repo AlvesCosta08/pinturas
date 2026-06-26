@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Alves Acabamentos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-2xl mx-auto bg-white p-6 rounded shadow">
+        <h1 class="text-2xl font-bold mb-4">Painel de Portfólio</h1>
+        
+        <!-- Login -->
+        <div id="login-section" class="mb-6">
+            <input type="password" id="password" placeholder="Senha de Admin" class="border p-2 w-full mb-2">
+            <button onclick="login()" class="bg-blue-600 text-white px-4 py-2 rounded">Entrar</button>
+        </div>
+
+        <!-- Upload Form -->
+        <div id="upload-section" class="hidden">
+            <h2 class="text-xl font-bold mb-4">Novo Projeto</h2>
+            <input type="text" id="title" placeholder="Título (ex: Reforma Apartamento Centro)" class="border p-2 w-full mb-2">
+            <select id="category" class="border p-2 w-full mb-2">
+                <option value="Residencial">Residencial</option>
+                <option value="Comercial">Comercial</option>
+                <option value="Gesso">Gesso e Drywall</option>
+                <option value="Fachada">Fachada</option>
+            </select>
+            <textarea id="description" placeholder="Descrição" class="border p-2 w-full mb-2"></textarea>
+            <input type="file" id="images" multiple accept="image/*" class="mb-4">
+            <button onclick="uploadProject()" class="bg-green-600 text-white px-4 py-2 rounded">Publicar</button>
+        </div>
+    </div>
+
+    <script>
+        let token = '';
+        const API = '/api';
+
+        async function login() {
+            const password = document.getElementById('password').value;
+            const res = await fetch(`${API}/auth/login`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ password })
+            });
+            const data = await res.json();
+            if (data.token) {
+                token = data.token;
+                document.getElementById('login-section').classList.add('hidden');
+                document.getElementById('upload-section').classList.remove('hidden');
+                localStorage.setItem('token', token);
+            } else {
+                alert('Senha incorreta!');
+            }
+        }
+
+        async function uploadProject() {
+            const formData = new FormData();
+            formData.append('title', document.getElementById('title').value);
+            formData.append('category', document.getElementById('category').value);
+            formData.append('description', document.getElementById('description').value);
+            
+            const files = document.getElementById('images').files;
+            for (let i = 0; i < files.length; i++) {
+                formData.append('images', files[i]);
+            }
+
+            const res = await fetch(`${API}/portfolio`, {
+                method: 'POST',
+                headers: { 'Authorization': `Bearer ${token}` },
+                body: formData
+            });
+
+            if (res.ok) {
+                alert('Projeto publicado com sucesso!');
+                location.reload();
+            } else {
+                alert('Erro ao publicar.');
+            }
+        }
+
+        // Auto-login se já tiver token
+        if (localStorage.getItem('token')) {
+            token = localStorage.getItem('token');
+            document.getElementById('login-section').classList.add('hidden');
+            document.getElementById('upload-section').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
