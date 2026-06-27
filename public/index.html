@@ -58,6 +58,10 @@
             background-color: #D4AF37 !important;
             color: white !important;
         }
+        /* Fallback de imagem caso não carregue */
+        .portfolio-item img {
+            background-color: #f3f4f6;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -81,7 +85,8 @@
 
                 <!-- Botões Desktop: Login + WhatsApp -->
                 <div class="hidden md:flex items-center gap-3">
-                    <a href="https://pinturas-tjwt.onrender.com/admin" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-gray-600 hover:text-secondary font-semibold text-sm transition border border-gray-300 hover:border-secondary px-4 py-2 rounded-full">
+                    <!-- ✅ URL RELATIVA: funciona em qualquer domínio -->
+                    <a href="/admin" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-gray-600 hover:text-secondary font-semibold text-sm transition border border-gray-300 hover:border-secondary px-4 py-2 rounded-full">
                         <i class="fas fa-lock"></i> Login
                     </a>
                     <a href="https://wa.me/5585986217161?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="flex bg-accent hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full transition items-center gap-2 text-sm">
@@ -105,7 +110,7 @@
                 <a href="#processo" class="block font-semibold text-gray-600 hover:text-secondary py-2">Metodologia</a>
                 <a href="#contato" class="block font-semibold text-gray-600 hover:text-secondary py-2">Contato</a>
                 <div class="border-t border-gray-100 pt-3 mt-3 space-y-3">
-                    <a href="https://pinturas-tjwt.onrender.com/admin" target="_blank" rel="noopener noreferrer" class="block border border-gray-300 text-gray-700 hover:border-secondary hover:text-secondary font-bold py-3 px-4 rounded-full transition text-center">
+                    <a href="/admin" target="_blank" rel="noopener noreferrer" class="block border border-gray-300 text-gray-700 hover:border-secondary hover:text-secondary font-bold py-3 px-4 rounded-full transition text-center">
                         <i class="fas fa-lock mr-2"></i> Área Administrativa
                     </a>
                     <a href="https://wa.me/5585986217161?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="block bg-accent hover:bg-green-600 text-white font-bold py-3 px-4 rounded-full transition text-center">
@@ -316,7 +321,12 @@
     <!-- FOOTER -->
     <footer class="bg-primary text-gray-400 py-8 text-center">
         <p class="font-heading font-bold text-white text-lg mb-2">AJ<span class="text-secondary"> Artes & Decorações</span></p>
-        <p class="text-xs md:text-sm">&copy; 2024 - Todos os direitos reservados. | Pintura, Gesso e Acabamentos de Alto Padrão.</p>
+        <!-- ✅ Copyright dinâmico com JavaScript -->
+        <p class="text-xs md:text-sm">&copy; <span id="current-year"></span> - Todos os direitos reservados. | Pintura, Gesso e Acabamentos de Alto Padrão.</p>
+        <!-- ✅ Link sutil para admin no footer (discreto, quase imperceptível para clientes) -->
+        <a href="/admin" class="block mt-4 text-xs text-gray-600 hover:text-gray-400 transition opacity-50 hover:opacity-100" aria-label="Acesso restrito">
+            <i class="fas fa-user-shield mr-1"></i> Área restrita
+        </a>
     </footer>
 
     <!-- BOTÃO FLUTUANTE WHATSAPP -->
@@ -349,50 +359,93 @@
                 menuIcon.classList.add('fa-bars');
             });
         });
+
+        // ✅ Atualiza ano automaticamente no copyright
+        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 
-    <!-- 🆕 SCRIPT DO PORTFÓLIO -->
+    <!-- 🆕 SCRIPT DO PORTFÓLIO (COM TRATAMENTO DE ERROS) -->
     <script>
+        // Imagem de fallback caso a imagem principal não carregue
+        const FALLBACK_IMAGE = 'https://via.placeholder.com/800x600/0F172A/D4AF37?text=Projeto+AJ+Artes';
+
         async function loadPortfolio() {
+            const grid = document.getElementById('portfolio-grid');
+            const emptyMsg = document.getElementById('portfolio-empty');
+
             try {
                 const res = await fetch('/api/portfolio');
-                if (!res.ok) throw new Error('Erro ao carregar portfólio');
+                
+                if (!res.ok) {
+                    throw new Error(`HTTP ${res.status}`);
+                }
                 
                 const projects = await res.json();
-                const grid = document.getElementById('portfolio-grid');
-                const emptyMsg = document.getElementById('portfolio-empty');
                 
                 // Se não houver projetos, mantém a mensagem padrão
-                if (!projects || projects.length === 0) {
+                if (!Array.isArray(projects) || projects.length === 0) {
                     return;
                 }
                 
                 // Remove mensagem de vazio
                 if (emptyMsg) emptyMsg.remove();
                 
-                // Renderiza os projetos
-                grid.innerHTML = projects.map(project => `
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 portfolio-item" data-category="${project.category}">
-                        <div class="relative">
-                            <img src="${project.images[0]}" alt="${project.title}" class="w-full h-64 object-cover" loading="lazy">
-                            <span class="absolute top-4 left-4 bg-secondary text-primary text-xs font-bold px-3 py-1 rounded-full uppercase">${project.category}</span>
+                // Renderiza os projetos com validações de segurança
+                grid.innerHTML = projects.map(project => {
+                    // Garante que images exista e seja array
+                    const images = Array.isArray(project?.images) && project.images.length > 0 
+                        ? project.images 
+                        : [FALLBACK_IMAGE];
+                    
+                    const mainImage = images[0] || FALLBACK_IMAGE;
+                    const title = project?.title || 'Sem título';
+                    const description = project?.description || '';
+                    const category = project?.category || 'Outros';
+                    
+                    return `
+                        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 portfolio-item" data-category="${category}">
+                            <div class="relative">
+                                <img src="${mainImage}" 
+                                     alt="${title}" 
+                                     class="w-full h-64 object-cover" 
+                                     loading="lazy"
+                                     onerror="this.src='${FALLBACK_IMAGE}'">
+                                <span class="absolute top-4 left-4 bg-secondary text-primary text-xs font-bold px-3 py-1 rounded-full uppercase">${category}</span>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-heading font-bold text-xl text-primary mb-2">${title}</h3>
+                                <p class="text-gray-600 text-sm">${description}</p>
+                                ${images.length > 1 ? `
+                                    <div class="mt-4 flex gap-2 overflow-x-auto pb-2">
+                                        ${images.slice(1).map(img => `
+                                            <img src="${img}" 
+                                                 alt="${title}" 
+                                                 class="w-20 h-20 object-cover rounded-lg flex-shrink-0 cursor-pointer hover:opacity-80 transition" 
+                                                 loading="lazy" 
+                                                 onerror="this.style.display='none'"
+                                                 onclick="openImageModal('${img}')">
+                                        `).join('')}
+                                    </div>
+                                ` : ''}
+                            </div>
                         </div>
-                        <div class="p-6">
-                            <h3 class="font-heading font-bold text-xl text-primary mb-2">${project.title}</h3>
-                            <p class="text-gray-600 text-sm">${project.description || ''}</p>
-                            ${project.images.length > 1 ? `
-                                <div class="mt-4 flex gap-2 overflow-x-auto pb-2">
-                                    ${project.images.slice(1).map(img => `
-                                        <img src="${img}" alt="${project.title}" class="w-20 h-20 object-cover rounded-lg flex-shrink-0 cursor-pointer hover:opacity-80 transition" loading="lazy" onclick="openImageModal('${img}')">
-                                    `).join('')}
-                                </div>
-                            ` : ''}
-                        </div>
-                    </div>
-                `).join('');
+                    `;
+                }).join('');
                 
             } catch (error) {
                 console.error('Erro ao carregar portfólio:', error);
+                
+                // ✅ Mensagem amigável se o servidor estiver dormindo ou com erro
+                if (emptyMsg) {
+                    emptyMsg.innerHTML = `
+                        <i class="fas fa-cloud text-5xl mb-4 text-gray-300"></i>
+                        <p class="text-lg">Carregando projetos...</p>
+                        <p class="text-sm mt-2">Se a galeria não aparecer, tente recarregar a página em instantes.</p>
+                        <button onclick="loadPortfolio()" class="mt-4 text-secondary hover:underline text-sm font-semibold">
+                            <i class="fas fa-redo mr-1"></i> Tentar novamente
+                        </button>
+                    `;
+                }
             }
         }
 
@@ -407,12 +460,10 @@
             
             // Filtra os projetos
             const items = document.querySelectorAll('.portfolio-item');
-            let visibleCount = 0;
             
             items.forEach(item => {
                 if (category === 'all' || item.dataset.category === category) {
                     item.style.display = 'block';
-                    visibleCount++;
                 } else {
                     item.style.display = 'none';
                 }
@@ -424,7 +475,12 @@
             const modal = document.createElement('div');
             modal.className = 'fixed inset-0 bg-black bg-opacity-90 z-[100] flex items-center justify-center p-4 cursor-pointer';
             modal.onclick = () => modal.remove();
-            modal.innerHTML = `<img src="${src}" class="max-w-full max-h-full object-contain">`;
+            modal.innerHTML = `
+                <button class="absolute top-4 right-4 text-white text-3xl hover:text-secondary" onclick="this.parentElement.remove()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <img src="${src}" class="max-w-full max-h-full object-contain" onerror="this.src='${FALLBACK_IMAGE}'">
+            `;
             document.body.appendChild(modal);
         }
 
