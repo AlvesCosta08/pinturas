@@ -316,16 +316,19 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-primary text-gray-400 py-8 text-center">
-        <p class="font-heading font-bold text-white text-lg mb-2">AJ<span class="text-secondary"> Artes & Decorações</span></p>
-        <!-- ✅ Copyright dinâmico com JavaScript -->
-        <p class="text-xs md:text-sm">&copy; <span id="current-year"></span> - Todos os direitos reservados. | Pintura, Gesso e Acabamentos de Alto Padrão.</p>
-        <!-- ✅ Link sutil para admin no footer (discreto, quase imperceptível para clientes) -->
-        <a href="/admin" class="block mt-4 text-xs text-gray-600 hover:text-gray-400 transition opacity-50 hover:opacity-100" aria-label="Acesso restrito">
-            <i class="fas fa-user-shield mr-1"></i> Área restrita
-        </a>
-    </footer>
+<!-- FOOTER -->
+<footer class="bg-primary text-gray-400 py-8 text-center">
+    <p class="font-heading font-bold text-white text-lg mb-2">AJ<span class="text-secondary"> Artes & Decorações</span></p>
+    <p class="text-xs md:text-sm">&copy; <span id="current-year"></span> - Todos os direitos reservados. | Pintura, Gesso e Acabamentos de Alto Padrão.</p>
+    
+    <!-- 🔒 Link ultra-discreto para área administrativa -->
+    <a href="/admin" 
+       class="block mt-6 text-[9px] leading-none text-primary/30 hover:text-primary/60 transition select-none" 
+       style="letter-spacing: 0.5px;"
+       aria-label="Acesso restrito">
+        •
+    </a>
+</footer>
 
     <!-- BOTÃO FLUTUANTE WHATSAPP -->
     <a href="https://wa.me/5585986217161?text=Olá!%20Gostaria%20de%20um%20orçamento." target="_blank" rel="noopener noreferrer" aria-label="Fale conosco no WhatsApp" class="fixed bottom-6 right-6 bg-accent hover:bg-green-600 text-white w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-2xl text-2xl md:text-3xl z-50 transition transform hover:scale-110">
