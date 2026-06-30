@@ -4,30 +4,110 @@
     <meta charset="UTF-8">
     <title>Admin - Alves Acabamentos</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .image-preview {
+            position: relative;
+            display: inline-block;
+            margin: 5px;
+        }
+        .image-preview img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .delete-image-btn {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: red;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 12px;
+        }
+    </style>
 </head>
 <body class="bg-gray-100 p-8">
-    <div class="max-w-2xl mx-auto bg-white p-6 rounded shadow">
-        <h1 class="text-2xl font-bold mb-4">Painel de Portfólio</h1>
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold mb-6 text-center">Painel de Portfólio</h1>
         
         <!-- Login -->
-        <div id="login-section" class="mb-6">
-            <input type="password" id="password" placeholder="Senha de Admin" class="border p-2 w-full mb-2">
-            <button onclick="login()" class="bg-blue-600 text-white px-4 py-2 rounded">Entrar</button>
+        <div id="login-section" class="max-w-md mx-auto bg-white p-6 rounded shadow mb-6">
+            <h2 class="text-xl font-bold mb-4">Login Admin</h2>
+            <input type="password" id="password" placeholder="Senha de Admin" class="border p-2 w-full mb-2 rounded">
+            <button onclick="login()" class="bg-blue-600 text-white px-4 py-2 rounded w-full hover:bg-blue-700">Entrar</button>
         </div>
 
-        <!-- Upload Form -->
-        <div id="upload-section" class="hidden">
-            <h2 class="text-xl font-bold mb-4">Novo Projeto</h2>
-            <input type="text" id="title" placeholder="Título (ex: Reforma Apartamento Centro)" class="border p-2 w-full mb-2">
-            <select id="category" class="border p-2 w-full mb-2">
+        <!-- Conteúdo Admin -->
+        <div id="admin-section" class="hidden">
+            <!-- Botão Logout -->
+            <div class="flex justify-end mb-4">
+                <button onclick="logout()" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Sair</button>
+            </div>
+
+            <!-- Formulário de Novo Projeto -->
+            <div class="bg-white p-6 rounded shadow mb-6">
+                <h2 class="text-xl font-bold mb-4">Novo Projeto</h2>
+                <input type="text" id="title" placeholder="Título (ex: Reforma Apartamento Centro)" class="border p-2 w-full mb-2 rounded">
+                <select id="category" class="border p-2 w-full mb-2 rounded">
+                    <option value="Residencial">Residencial</option>
+                    <option value="Comercial">Comercial</option>
+                    <option value="Gesso">Gesso e Drywall</option>
+                    <option value="Fachada">Fachada</option>
+                </select>
+                <textarea id="description" placeholder="Descrição" class="border p-2 w-full mb-2 rounded" rows="3"></textarea>
+                <input type="file" id="images" multiple accept="image/*" class="mb-4">
+                <button onclick="uploadProject()" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Publicar</button>
+            </div>
+
+            <!-- Lista de Projetos -->
+            <div class="bg-white p-6 rounded shadow">
+                <h2 class="text-xl font-bold mb-4">Projetos Existentes</h2>
+                <div id="projects-list" class="space-y-4">
+                    <p class="text-gray-500">Carregando projetos...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Edição -->
+    <div id="edit-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white p-6 rounded shadow-lg max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <h2 class="text-xl font-bold mb-4">Editar Projeto</h2>
+            <input type="hidden" id="edit-id">
+            <input type="text" id="edit-title" placeholder="Título" class="border p-2 w-full mb-2 rounded">
+            <select id="edit-category" class="border p-2 w-full mb-2 rounded">
                 <option value="Residencial">Residencial</option>
                 <option value="Comercial">Comercial</option>
                 <option value="Gesso">Gesso e Drywall</option>
                 <option value="Fachada">Fachada</option>
             </select>
-            <textarea id="description" placeholder="Descrição" class="border p-2 w-full mb-2"></textarea>
-            <input type="file" id="images" multiple accept="image/*" class="mb-4">
-            <button onclick="uploadProject()" class="bg-green-600 text-white px-4 py-2 rounded">Publicar</button>
+            <textarea id="edit-description" placeholder="Descrição" class="border p-2 w-full mb-2 rounded" rows="3"></textarea>
+            
+            <div class="mb-4">
+                <label class="block font-bold mb-2">Imagens Atuais:</label>
+                <div id="edit-images" class="flex flex-wrap"></div>
+            </div>
+            
+            <div class="mb-4">
+                <label class="block font-bold mb-2">Adicionar Novas Imagens:</label>
+                <input type="file" id="edit-new-images" multiple accept="image/*">
+                <label class="flex items-center mt-2">
+                    <input type="checkbox" id="replace-images" class="mr-2">
+                    <span>Substituir todas as imagens atuais</span>
+                </label>
+            </div>
+            
+            <div class="flex gap-2">
+                <button onclick="updateProject()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Salvar</button>
+                <button onclick="closeEditModal()" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700">Cancelar</button>
+            </div>
         </div>
     </div>
 
@@ -35,54 +115,297 @@
         let token = '';
         const API = '/api';
 
+        // ==========================================
+        // LOGIN/LOGOUT
+        // ==========================================
         async function login() {
             const password = document.getElementById('password').value;
-            const res = await fetch(`${API}/auth/login`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ password })
-            });
-            const data = await res.json();
-            if (data.token) {
-                token = data.token;
-                document.getElementById('login-section').classList.add('hidden');
-                document.getElementById('upload-section').classList.remove('hidden');
-                localStorage.setItem('token', token);
-            } else {
-                alert('Senha incorreta!');
+            try {
+                const res = await fetch(`${API}/auth/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ password })
+                });
+                const data = await res.json();
+                if (data.token) {
+                    token = data.token;
+                    localStorage.setItem('token', token);
+                    showAdminSection();
+                    loadProjects();
+                } else {
+                    alert('Senha incorreta!');
+                }
+            } catch (error) {
+                alert('Erro ao fazer login');
+                console.error(error);
             }
         }
 
+        function logout() {
+            localStorage.removeItem('token');
+            token = '';
+            document.getElementById('login-section').classList.remove('hidden');
+            document.getElementById('admin-section').classList.add('hidden');
+        }
+
+        function showAdminSection() {
+            document.getElementById('login-section').classList.add('hidden');
+            document.getElementById('admin-section').classList.remove('hidden');
+        }
+
+        // ==========================================
+        // CRUD - CREATE
+        // ==========================================
         async function uploadProject() {
-            const formData = new FormData();
-            formData.append('title', document.getElementById('title').value);
-            formData.append('category', document.getElementById('category').value);
-            formData.append('description', document.getElementById('description').value);
-            
+            const title = document.getElementById('title').value;
+            const category = document.getElementById('category').value;
+            const description = document.getElementById('description').value;
             const files = document.getElementById('images').files;
+
+            if (!title || !category) {
+                alert('Título e categoria são obrigatórios!');
+                return;
+            }
+
+            if (files.length === 0) {
+                alert('Pelo menos uma imagem é obrigatória!');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('title', title);
+            formData.append('category', category);
+            formData.append('description', description);
+            
             for (let i = 0; i < files.length; i++) {
                 formData.append('images', files[i]);
             }
 
-            const res = await fetch(`${API}/portfolio`, {
-                method: 'POST',
-                headers: { 'Authorization': `Bearer ${token}` },
-                body: formData
-            });
+            try {
+                const res = await fetch(`${API}/portfolio`, {
+                    method: 'POST',
+                    headers: { 'Authorization': `Bearer ${token}` },
+                    body: formData
+                });
 
-            if (res.ok) {
-                alert('Projeto publicado com sucesso!');
-                location.reload();
-            } else {
-                alert('Erro ao publicar.');
+                if (res.ok) {
+                    alert('✅ Projeto publicado com sucesso!');
+                    document.getElementById('title').value = '';
+                    document.getElementById('description').value = '';
+                    document.getElementById('images').value = '';
+                    loadProjects();
+                } else {
+                    const error = await res.json();
+                    alert('❌ Erro: ' + (error.error || 'Erro ao publicar'));
+                }
+            } catch (error) {
+                alert('Erro ao publicar projeto');
+                console.error(error);
             }
         }
 
-        // Auto-login se já tiver token
+        // ==========================================
+        // CRUD - READ
+        // ==========================================
+        async function loadProjects() {
+            try {
+                const res = await fetch(`${API}/portfolio`);
+                const data = await res.json();
+                const projects = data.projects || data;
+                
+                const projectsList = document.getElementById('projects-list');
+                
+                if (!projects || projects.length === 0) {
+                    projectsList.innerHTML = '<p class="text-gray-500">Nenhum projeto cadastrado.</p>';
+                    return;
+                }
+
+                projectsList.innerHTML = projects.map(project => `
+                    <div class="border p-4 rounded">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h3 class="font-bold text-lg">${project.title}</h3>
+                                <p class="text-sm text-gray-600">${project.category}</p>
+                                <p class="text-sm text-gray-500 mt-1">${project.description || 'Sem descrição'}</p>
+                                <p class="text-xs text-gray-400 mt-1">ID: ${project.id}</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <button onclick="editProject('${project.id}')" class="bg-blue-500 text-white px-3 py-1 rounded text-sm hover:bg-blue-600">Editar</button>
+                                <button onclick="deleteProject('${project.id}')" class="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600">Deletar</button>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            ${project.images.map((img, index) => `
+                                <div class="image-preview">
+                                    <img src="${img}" alt="${project.title}">
+                                    <div class="delete-image-btn" onclick="deleteImage('${project.id}', ${index})">×</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Erro ao carregar projetos:', error);
+                document.getElementById('projects-list').innerHTML = '<p class="text-red-500">Erro ao carregar projetos</p>';
+            }
+        }
+
+        // ==========================================
+        // CRUD - UPDATE
+        // ==========================================
+        async function editProject(id) {
+            try {
+                const res = await fetch(`${API}/portfolio/${id}`);
+                const project = await res.json();
+                
+                document.getElementById('edit-id').value = project.id;
+                document.getElementById('edit-title').value = project.title;
+                document.getElementById('edit-category').value = project.category;
+                document.getElementById('edit-description').value = project.description || '';
+                
+                const imagesContainer = document.getElementById('edit-images');
+                imagesContainer.innerHTML = project.images.map((img, index) => `
+                    <div class="image-preview">
+                        <img src="${img}" alt="Imagem ${index + 1}">
+                        <div class="delete-image-btn" onclick="deleteImageFromEdit('${project.id}', ${index})">×</div>
+                    </div>
+                `).join('');
+                
+                document.getElementById('edit-modal').classList.remove('hidden');
+            } catch (error) {
+                alert('Erro ao carregar projeto');
+                console.error(error);
+            }
+        }
+
+        async function updateProject() {
+            const id = document.getElementById('edit-id').value;
+            const title = document.getElementById('edit-title').value;
+            const category = document.getElementById('edit-category').value;
+            const description = document.getElementById('edit-description').value;
+            const newImages = document.getElementById('edit-new-images').files;
+            const replaceImages = document.getElementById('replace-images').checked;
+
+            const formData = new FormData();
+            formData.append('title', title);
+            formData.append('category', category);
+            formData.append('description', description);
+            formData.append('replaceImages', replaceImages);
+            
+            for (let i = 0; i < newImages.length; i++) {
+                formData.append('images', newImages[i]);
+            }
+
+            try {
+                const res = await fetch(`${API}/portfolio/${id}`, {
+                    method: 'PUT',
+                    headers: { 'Authorization': `Bearer ${token}` },
+                    body: formData
+                });
+
+                if (res.ok) {
+                    alert('✅ Projeto atualizado com sucesso!');
+                    closeEditModal();
+                    loadProjects();
+                } else {
+                    const error = await res.json();
+                    alert('❌ Erro: ' + (error.error || 'Erro ao atualizar'));
+                }
+            } catch (error) {
+                alert('Erro ao atualizar projeto');
+                console.error(error);
+            }
+        }
+
+        function closeEditModal() {
+            document.getElementById('edit-modal').classList.add('hidden');
+            document.getElementById('edit-new-images').value = '';
+            document.getElementById('replace-images').checked = false;
+        }
+
+        // ==========================================
+        // CRUD - DELETE
+        // ==========================================
+        async function deleteProject(id) {
+            if (!confirm('Tem certeza que deseja deletar este projeto? Esta ação não pode ser desfeita!')) {
+                return;
+            }
+
+            try {
+                const res = await fetch(`${API}/portfolio/${id}`, {
+                    method: 'DELETE',
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+
+                if (res.ok) {
+                    alert('✅ Projeto deletado com sucesso!');
+                    loadProjects();
+                } else {
+                    const error = await res.json();
+                    alert('❌ Erro: ' + (error.error || 'Erro ao deletar'));
+                }
+            } catch (error) {
+                alert('Erro ao deletar projeto');
+                console.error(error);
+            }
+        }
+
+        async function deleteImage(projectId, imageIndex) {
+            if (!confirm('Deseja deletar esta imagem?')) {
+                return;
+            }
+
+            try {
+                const res = await fetch(`${API}/portfolio/${projectId}/images/${imageIndex}`, {
+                    method: 'DELETE',
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+
+                if (res.ok) {
+                    alert('✅ Imagem deletada!');
+                    loadProjects();
+                } else {
+                    const error = await res.json();
+                    alert('❌ Erro: ' + (error.error || 'Erro ao deletar imagem'));
+                }
+            } catch (error) {
+                alert('Erro ao deletar imagem');
+                console.error(error);
+            }
+        }
+
+        async function deleteImageFromEdit(projectId, imageIndex) {
+            if (!confirm('Deseja deletar esta imagem?')) {
+                return;
+            }
+
+            try {
+                const res = await fetch(`${API}/portfolio/${projectId}/images/${imageIndex}`, {
+                    method: 'DELETE',
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+
+                if (res.ok) {
+                    alert('✅ Imagem deletada!');
+                    editProject(projectId); // Recarregar modal
+                    loadProjects(); // Recarregar lista
+                } else {
+                    const error = await res.json();
+                    alert('❌ Erro: ' + (error.error || 'Erro ao deletar imagem'));
+                }
+            } catch (error) {
+                alert('Erro ao deletar imagem');
+                console.error(error);
+            }
+        }
+
+        // ==========================================
+        // INICIALIZAÇÃO
+        // ==========================================
         if (localStorage.getItem('token')) {
             token = localStorage.getItem('token');
-            document.getElementById('login-section').classList.add('hidden');
-            document.getElementById('upload-section').classList.remove('hidden');
+            showAdminSection();
+            loadProjects();
         }
     </script>
 </body>
