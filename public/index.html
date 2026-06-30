@@ -85,8 +85,6 @@
 
                 <!-- Botões Desktop: Login + WhatsApp -->
                 <div class="hidden md:flex items-center gap-3">
-                    <!-- ✅ URL RELATIVA: funciona em qualquer domínio -->
-
                     <a href="https://wa.me/5585986217161?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="flex bg-accent hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full transition items-center gap-2 text-sm">
                         <i class="fab fa-whatsapp"></i> Orçamento
                     </a>
@@ -365,7 +363,7 @@
         document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 
-    <!-- 🆕 SCRIPT DO PORTFÓLIO (COM TRATAMENTO DE ERROS) -->
+    <!-- 🆕 SCRIPT DO PORTFÓLIO (CORRIGIDO) -->
     <script>
         // Imagem de fallback caso a imagem principal não carregue
         const FALLBACK_IMAGE = 'https://via.placeholder.com/800x600/0F172A/D4AF37?text=Projeto+AJ+Artes';
@@ -375,16 +373,31 @@
             const emptyMsg = document.getElementById('portfolio-empty');
 
             try {
+                console.log('🔄 Carregando portfólio...');
                 const res = await fetch('/api/portfolio');
                 
                 if (!res.ok) {
-                    throw new Error(`HTTP ${res.status}`);
+                    throw new Error(`HTTP ${res.status}: ${res.statusText}`);
                 }
                 
-                const projects = await res.json();
+                const data = await res.json();
+                console.log('📦 Resposta da API:', data);
+                
+                // ✅ CORREÇÃO: Verifica se é objeto com projects ou array direto
+                let projects;
+                if (Array.isArray(data)) {
+                    projects = data;
+                } else if (data.projects && Array.isArray(data.projects)) {
+                    projects = data.projects;
+                } else {
+                    projects = [];
+                }
+                
+                console.log('📋 Projetos encontrados:', projects.length);
                 
                 // Se não houver projetos, mantém a mensagem padrão
-                if (!Array.isArray(projects) || projects.length === 0) {
+                if (projects.length === 0) {
+                    console.log('⚠️ Nenhum projeto encontrado');
                     return;
                 }
                 
@@ -433,16 +446,18 @@
                     `;
                 }).join('');
                 
+                console.log('✅ Portfólio carregado com sucesso!');
+                
             } catch (error) {
-                console.error('Erro ao carregar portfólio:', error);
+                console.error('❌ Erro ao carregar portfólio:', error);
                 
                 // ✅ Mensagem amigável se o servidor estiver dormindo ou com erro
                 if (emptyMsg) {
                     emptyMsg.innerHTML = `
-                        <i class="fas fa-cloud text-5xl mb-4 text-gray-300"></i>
-                        <p class="text-lg">Carregando projetos...</p>
-                        <p class="text-sm mt-2">Se a galeria não aparecer, tente recarregar a página em instantes.</p>
-                        <button onclick="loadPortfolio()" class="mt-4 text-secondary hover:underline text-sm font-semibold">
+                        <i class="fas fa-exclamation-triangle text-5xl mb-4 text-orange-400"></i>
+                        <p class="text-lg font-semibold text-gray-700">Não foi possível carregar os projetos</p>
+                        <p class="text-sm mt-2 text-gray-500">Verifique se o servidor está rodando</p>
+                        <button onclick="loadPortfolio()" class="mt-4 bg-secondary hover:bg-secondary/80 text-primary font-bold py-2 px-6 rounded-full transition text-sm">
                             <i class="fas fa-redo mr-1"></i> Tentar novamente
                         </button>
                     `;
@@ -485,9 +500,11 @@
             document.body.appendChild(modal);
         }
 
-        
-
-        document.addEventListener('DOMContentLoaded', loadPortfolio);
+        // Carrega o portfólio quando a página carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('🚀 Página carregada, iniciando portfólio...');
+            loadPortfolio();
+        });
     </script>
 
 </body>
