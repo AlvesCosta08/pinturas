@@ -62,6 +62,14 @@
         .portfolio-item img {
             background-color: #f3f4f6;
         }
+        /* Estilo para ícones sociais no rodapé */
+        .social-icons a {
+            transition: all 0.3s ease;
+        }
+        .social-icons a:hover {
+            transform: translateY(-3px);
+            color: #D4AF37 !important;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -315,17 +323,44 @@
     </section>
 
 <!-- FOOTER -->
-<footer class="bg-primary text-gray-400 py-8 text-center">
-    <p class="font-heading font-bold text-white text-lg mb-2">AJ<span class="text-secondary"> Artes & Decorações</span></p>
-    <p class="text-xs md:text-sm">&copy; <span id="current-year"></span> - Todos os direitos reservados. | Pintura, Gesso e Acabamentos de Alto Padrão.</p>
-    
-    <!-- 🔒 Link ultra-discreto para área administrativa -->
-    <a href="/admin" 
-       class="block mt-6 text-[9px] leading-none text-primary/30 hover:text-primary/60 transition select-none" 
-       style="letter-spacing: 0.5px;"
-       aria-label="Acesso restrito">
-        +
-    </a>
+<footer class="bg-primary text-gray-400 py-8">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <p class="font-heading font-bold text-white text-lg mb-2">AJ<span class="text-secondary"> Artes & Decorações</span></p>
+        
+        <!-- Ícones de Redes Sociais -->
+        <div class="flex justify-center gap-6 mb-4 social-icons">
+            <a href="https://www.instagram.com/ajartesedecoracoes" target="_blank" rel="noopener noreferrer" 
+               class="text-gray-400 hover:text-secondary transition-all text-2xl" 
+               aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/ajartesedecoracoes" target="_blank" rel="noopener noreferrer" 
+               class="text-gray-400 hover:text-secondary transition-all text-2xl" 
+               aria-label="Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://wa.me/5585986217161" target="_blank" rel="noopener noreferrer" 
+               class="text-gray-400 hover:text-secondary transition-all text-2xl" 
+               aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.youtube.com/@ajartesedecoracoes" target="_blank" rel="noopener noreferrer" 
+               class="text-gray-400 hover:text-secondary transition-all text-2xl" 
+               aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+        
+        <p class="text-xs md:text-sm">&copy; <span id="current-year"></span> - Todos os direitos reservados. | Pintura, Gesso e Acabamentos de Alto Padrão.</p>
+        
+        <!-- 🔒 Link ultra-discreto para área administrativa -->
+        <a href="/admin" 
+           class="block mt-6 text-[9px] leading-none text-primary/30 hover:text-primary/60 transition select-none" 
+           style="letter-spacing: 0.5px;"
+           aria-label="Acesso restrito">
+            +
+        </a>
+    </div>
 </footer>
 
     <!-- BOTÃO FLUTUANTE WHATSAPP -->
