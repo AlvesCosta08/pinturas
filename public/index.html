@@ -53,22 +53,42 @@
         #mobile-menu.open {
             max-height: 500px;
         }
-        /* Estilo para o estado ativo dos filtros */
         .filter-btn.active {
             background-color: #D4AF37 !important;
             color: white !important;
         }
-        /* Fallback de imagem caso não carregue */
         .portfolio-item img {
             background-color: #f3f4f6;
         }
-        /* Estilo para ícones sociais no rodapé */
         .social-icons a {
             transition: all 0.3s ease;
         }
         .social-icons a:hover {
             transform: translateY(-3px);
             color: #D4AF37 !important;
+        }
+        /* Animação de pulso para o botão flutuante */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        /* Estilo para o banner de contato fixo */
+        .contact-bar {
+            transition: transform 0.3s ease;
+        }
+        .contact-bar:hover {
+            transform: translateY(-2px);
+        }
+        /* Botão de voltar ao topo */
+        #back-to-top {
+            transition: all 0.3s ease;
+        }
+        #back-to-top:hover {
+            transform: translateY(-3px);
         }
     </style>
 </head>
@@ -82,7 +102,6 @@
                     AJ<span class="text-secondary"> Artes & Decorações</span>
                 </a>
                 
-                <!-- Links Desktop -->
                 <div class="hidden md:flex space-x-6 font-semibold text-gray-600 text-sm">
                     <a href="#diferenciais" class="hover:text-secondary transition">Diferenciais</a>
                     <a href="#servicos" class="hover:text-secondary transition">Serviços</a>
@@ -91,21 +110,21 @@
                     <a href="#contato" class="hover:text-secondary transition">Contato</a>
                 </div>
 
-                <!-- Botões Desktop: Login + WhatsApp -->
                 <div class="hidden md:flex items-center gap-3">
+                    <a href="tel:+5585986217161" class="flex bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded-full transition items-center gap-2 text-sm">
+                        <i class="fas fa-phone-alt"></i> (85) 98621-7161
+                    </a>
                     <a href="https://wa.me/5585986217161?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="flex bg-accent hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full transition items-center gap-2 text-sm">
                         <i class="fab fa-whatsapp"></i> Orçamento
                     </a>
                 </div>
 
-                <!-- Botão Hamburger Mobile -->
                 <button id="menu-toggle" class="md:hidden text-primary focus:outline-none" aria-label="Abrir menu">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
 
-        <!-- Menu Mobile -->
         <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100">
             <div class="px-4 py-3 space-y-3">
                 <a href="#diferenciais" class="block font-semibold text-gray-600 hover:text-secondary py-2">Diferenciais</a>
@@ -114,16 +133,42 @@
                 <a href="#processo" class="block font-semibold text-gray-600 hover:text-secondary py-2">Metodologia</a>
                 <a href="#contato" class="block font-semibold text-gray-600 hover:text-secondary py-2">Contato</a>
                 <div class="border-t border-gray-100 pt-3 mt-3 space-y-3">
-                    <a href="/admin" target="_blank" rel="noopener noreferrer" class="block border border-gray-300 text-gray-700 hover:border-secondary hover:text-secondary font-bold py-3 px-4 rounded-full transition text-center">
-                        <i class="fas fa-lock mr-2"></i> Área Administrativa
+                    <a href="tel:+5585986217161" class="block border border-gray-300 text-gray-700 hover:border-secondary hover:text-secondary font-bold py-3 px-4 rounded-full transition text-center">
+                        <i class="fas fa-phone-alt mr-2"></i> (85) 98621-7161
                     </a>
                     <a href="https://wa.me/5585986217161?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="block bg-accent hover:bg-green-600 text-white font-bold py-3 px-4 rounded-full transition text-center">
                         <i class="fab fa-whatsapp mr-2"></i> Orçamento
+                    </a>
+                    <a href="/admin" target="_blank" rel="noopener noreferrer" class="block border border-gray-300 text-gray-700 hover:border-secondary hover:text-secondary font-bold py-3 px-4 rounded-full transition text-center">
+                        <i class="fas fa-lock mr-2"></i> Área Administrativa
                     </a>
                 </div>
             </div>
         </div>
     </nav>
+
+    <!-- BARRA DE CONTATO FIXA SUPERIOR (aparece ao rolar) -->
+    <div id="contact-bar" class="fixed top-16 left-0 right-0 bg-primary/95 backdrop-blur-sm text-white py-2 px-4 z-40 transform -translate-y-full transition-all duration-500 hidden md:block">
+        <div class="max-w-7xl mx-auto flex items-center justify-between text-sm">
+            <div class="flex items-center gap-6">
+                <span class="flex items-center gap-2">
+                    <i class="fas fa-phone-alt text-secondary"></i>
+                    <a href="tel:+5585986217161" class="hover:text-secondary transition">(85) 98621-7161</a>
+                </span>
+                <span class="flex items-center gap-2">
+                    <i class="fab fa-whatsapp text-secondary"></i>
+                    <a href="https://wa.me/5585986217161" target="_blank" class="hover:text-secondary transition">WhatsApp</a>
+                </span>
+                <span class="flex items-center gap-2">
+                    <i class="far fa-clock text-secondary"></i>
+                    Seg - Sáb: 8h às 18h
+                </span>
+            </div>
+            <a href="#contato" class="bg-secondary text-primary font-bold px-4 py-1 rounded-full hover:bg-secondary/80 transition text-xs">
+                Solicitar Orçamento
+            </a>
+        </div>
+    </div>
 
     <!-- HERO SECTION -->
     <header class="hero-bg pt-24 pb-16 md:pt-32 md:pb-20 px-4 text-white">
@@ -139,9 +184,15 @@
                 <a href="https://wa.me/5585986217161?text=Olá!%20Gostaria%20de%20agendar%20uma%20visita%20técnica." target="_blank" rel="noopener noreferrer" class="bg-accent hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full text-base md:text-lg transition shadow-lg flex items-center justify-center gap-2">
                     <i class="fab fa-whatsapp text-xl md:text-2xl"></i> Solicitar Visita Técnica
                 </a>
-                <a href="#servicos" class="border-2 border-white hover:bg-white hover:text-primary text-white font-bold py-4 px-8 rounded-full text-base md:text-lg transition text-center">
-                    Nossos Serviços
+                <a href="tel:+5585986217161" class="border-2 border-white hover:bg-white hover:text-primary text-white font-bold py-4 px-8 rounded-full text-base md:text-lg transition text-center flex items-center justify-center gap-2">
+                    <i class="fas fa-phone-alt"></i> Ligar Agora
                 </a>
+            </div>
+            <!-- Indicadores de contato rápido -->
+            <div class="mt-8 flex flex-wrap justify-center gap-4 text-xs md:text-sm text-gray-300">
+                <span class="flex items-center gap-2"><i class="fas fa-check-circle text-secondary"></i> Atendimento Imediato</span>
+                <span class="flex items-center gap-2"><i class="fas fa-check-circle text-secondary"></i> Orçamento sem Compromisso</span>
+                <span class="flex items-center gap-2"><i class="fas fa-check-circle text-secondary"></i> Visita Técnica Gratuita</span>
             </div>
         </div>
     </header>
@@ -234,7 +285,7 @@
         </div>
     </section>
 
-    <!-- 🆕 PORTFÓLIO / GALERIA -->
+    <!-- PORTFÓLIO -->
     <section id="portfolio" class="py-16 md:py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12">
@@ -242,7 +293,6 @@
                 <p class="text-gray-600 mt-4 text-sm md:text-base">Veja a transformação real dos nossos clientes.</p>
             </div>
 
-            <!-- Filtros -->
             <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-10" id="filters">
                 <button onclick="filterPortfolio('all', this)" class="filter-btn active px-4 py-2 rounded-full bg-primary text-white hover:bg-secondary transition text-sm">Todos</button>
                 <button onclick="filterPortfolio('Residencial', this)" class="filter-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-secondary hover:text-white transition text-sm">Residencial</button>
@@ -251,9 +301,7 @@
                 <button onclick="filterPortfolio('Fachada', this)" class="filter-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-secondary hover:text-white transition text-sm">Fachada</button>
             </div>
 
-            <!-- Grid de Projetos -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
-                <!-- Mensagem quando não há projetos ainda -->
                 <div class="col-span-full text-center py-12 text-gray-500" id="portfolio-empty">
                     <i class="fas fa-images text-5xl mb-4 text-gray-300"></i>
                     <p class="text-lg">Em breve nossos projetos estarão aqui!</p>
@@ -300,76 +348,134 @@
         </div>
     </section>
 
-    <!-- CTA FINAL / CONTATO -->
+    <!-- SEÇÃO DE CONTATO COMPLETA -->
     <section id="contato" class="py-16 md:py-20 bg-gray-50">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="font-heading text-2xl md:text-4xl font-bold text-primary mb-4">Pronto para valorizar seu imóvel?</h2>
-            <p class="text-gray-600 mb-8 text-base md:text-lg">Mais do que acabamento, entregamos valorização, organização e excelência em cada detalhe.</p>
-            <a href="https://wa.me/5585986217161?text=Olá!%20Vi%20o%20site%20e%20gostaria%20de%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="inline-block bg-accent hover:bg-green-600 text-white font-bold py-4 md:py-5 px-8 md:px-10 rounded-full text-lg md:text-xl transition shadow-2xl transform hover:scale-105">
-                <i class="fab fa-whatsapp mr-2"></i> Falar com um Especialista Agora
-            </a>
-            <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-600 text-sm md:text-base">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-2xl md:text-4xl font-bold text-primary mb-4">Pronto para valorizar seu imóvel?</h2>
+                <p class="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">Mais do que acabamento, entregamos valorização, organização e excelência em cada detalhe.</p>
+            </div>
+
+            <!-- Cards de Contato -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <!-- WhatsApp -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition text-center border border-gray-100">
+                    <div class="w-16 h-16 bg-accent/10 text-accent rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-primary mb-2">WhatsApp</h3>
+                    <p class="text-gray-600 text-sm mb-4">Resposta rápida e orçamento sem compromisso</p>
+                    <a href="https://wa.me/5585986217161?text=Olá!%20Gostaria%20de%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="inline-block bg-accent hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition w-full">
+                        <i class="fab fa-whatsapp mr-2"></i> Chamar no WhatsApp
+                    </a>
+                </div>
+
+                <!-- Telefone -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition text-center border border-gray-100">
+                    <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-primary mb-2">Telefone</h3>
+                    <p class="text-gray-600 text-sm mb-4">Atendimento de segunda a sábado, 8h às 18h</p>
+                    <a href="tel:+5585986217161" class="inline-block bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-full transition w-full">
+                        <i class="fas fa-phone-alt mr-2"></i> (85) 98621-7161
+                    </a>
+                </div>
+
+                <!-- Visita Técnica -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition text-center border border-gray-100">
+                    <div class="w-16 h-16 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-primary mb-2">Visita Técnica</h3>
+                    <p class="text-gray-600 text-sm mb-4">Agende uma visita gratuita para avaliação</p>
+                    <a href="https://wa.me/5585986217161?text=Olá!%20Gostaria%20de%20agendar%20uma%20visita%20técnica." target="_blank" rel="noopener noreferrer" class="inline-block bg-secondary hover:bg-secondary/90 text-primary font-bold py-3 px-6 rounded-full transition w-full">
+                        <i class="fas fa-calendar-check mr-2"></i> Agendar Visita
+                    </a>
+                </div>
+            </div>
+
+            <!-- Informações adicionais -->
+            <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 text-gray-600 text-sm max-w-4xl mx-auto">
                 <div class="flex items-center justify-center gap-2">
-                    <i class="fas fa-phone-alt text-secondary"></i> Atendimento Rápido
+                    <i class="fas fa-check-circle text-secondary"></i> Orçamento sem Compromisso
                 </div>
                 <div class="flex items-center justify-center gap-2">
-                    <i class="fas fa-map-marker-alt text-secondary"></i> Visita Técnica Gratuita
+                    <i class="fas fa-check-circle text-secondary"></i> Atendimento Personalizado
                 </div>
                 <div class="flex items-center justify-center gap-2">
-                    <i class="fas fa-calendar-alt text-secondary"></i> Agendamento Facilitado
+                    <i class="fas fa-check-circle text-secondary"></i> Garantia de Qualidade
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fas fa-check-circle text-secondary"></i> Melhor Custo-Benefício
                 </div>
             </div>
         </div>
     </section>
 
-<!-- FOOTER -->
-<footer class="bg-primary text-gray-400 py-8">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-        <p class="font-heading font-bold text-white text-lg mb-2">AJ<span class="text-secondary"> Artes & Decorações</span></p>
-        
-        <!-- Ícones de Redes Sociais -->
-        <div class="flex justify-center gap-6 mb-4 social-icons">
-            <a href="https://www.instagram.com/ajartesedecoracoes" target="_blank" rel="noopener noreferrer" 
-               class="text-gray-400 hover:text-secondary transition-all text-2xl" 
-               aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.facebook.com/ajartesedecoracoes" target="_blank" rel="noopener noreferrer" 
-               class="text-gray-400 hover:text-secondary transition-all text-2xl" 
-               aria-label="Facebook">
-                <i class="fab fa-facebook"></i>
-            </a>
-            <a href="https://wa.me/5585986217161" target="_blank" rel="noopener noreferrer" 
-               class="text-gray-400 hover:text-secondary transition-all text-2xl" 
-               aria-label="WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-            <a href="https://www.youtube.com/@ajartesedecoracoes" target="_blank" rel="noopener noreferrer" 
-               class="text-gray-400 hover:text-secondary transition-all text-2xl" 
-               aria-label="YouTube">
-                <i class="fab fa-youtube"></i>
+    <!-- FOOTER -->
+    <footer class="bg-primary text-gray-400 py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="font-heading font-bold text-white text-lg mb-2">AJ<span class="text-secondary"> Artes & Decorações</span></p>
+            
+            <div class="flex flex-wrap justify-center gap-6 mb-4 social-icons">
+                <a href="https://www.instagram.com/ajartes26?igsh=YTdnbG5qcGM3NDR5" target="_blank" rel="noopener noreferrer" 
+                   class="text-gray-400 hover:text-secondary transition-all text-2xl" 
+                   aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/ajartesedecoracoes" target="_blank" rel="noopener noreferrer" 
+                   class="text-gray-400 hover:text-secondary transition-all text-2xl" 
+                   aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://wa.me/5585986217161" target="_blank" rel="noopener noreferrer" 
+                   class="text-gray-400 hover:text-secondary transition-all text-2xl" 
+                   aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.youtube.com/@ajartesedecoracoes" target="_blank" rel="noopener noreferrer" 
+                   class="text-gray-400 hover:text-secondary transition-all text-2xl" 
+                   aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-4 text-xs md:text-sm mb-4">
+                <a href="tel:+5585986217161" class="hover:text-secondary transition">
+                    <i class="fas fa-phone-alt mr-1"></i> (85) 98621-7161
+                </a>
+                <a href="https://wa.me/5585986217161" target="_blank" class="hover:text-secondary transition">
+                    <i class="fab fa-whatsapp mr-1"></i> WhatsApp
+                </a>
+                <a href="mailto:contato@ajartesedecoracoes.com" class="hover:text-secondary transition">
+                    <i class="fas fa-envelope mr-1"></i> contato@ajartesedecoracoes.com
+                </a>
+            </div>
+            
+            <p class="text-xs md:text-sm">&copy; <span id="current-year"></span> - Todos os direitos reservados. | Pintura, Gesso e Acabamentos de Alto Padrão.</p>
+            
+            <a href="/admin" 
+               class="block mt-6 text-[9px] leading-none text-primary/30 hover:text-primary/60 transition select-none" 
+               style="letter-spacing: 0.5px;"
+               aria-label="Acesso restrito">
+                +
             </a>
         </div>
-        
-        <p class="text-xs md:text-sm">&copy; <span id="current-year"></span> - Todos os direitos reservados. | Pintura, Gesso e Acabamentos de Alto Padrão.</p>
-        
-        <!-- 🔒 Link ultra-discreto para área administrativa -->
-        <a href="/admin" 
-           class="block mt-6 text-[9px] leading-none text-primary/30 hover:text-primary/60 transition select-none" 
-           style="letter-spacing: 0.5px;"
-           aria-label="Acesso restrito">
-            +
-        </a>
-    </div>
-</footer>
+    </footer>
 
     <!-- BOTÃO FLUTUANTE WHATSAPP -->
-    <a href="https://wa.me/5585986217161?text=Olá!%20Gostaria%20de%20um%20orçamento." target="_blank" rel="noopener noreferrer" aria-label="Fale conosco no WhatsApp" class="fixed bottom-6 right-6 bg-accent hover:bg-green-600 text-white w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-2xl text-2xl md:text-3xl z-50 transition transform hover:scale-110">
+    <a href="https://wa.me/5585986217161?text=Olá!%20Gostaria%20de%20um%20orçamento." target="_blank" rel="noopener noreferrer" aria-label="Fale conosco no WhatsApp" class="fixed bottom-6 right-6 bg-accent hover:bg-green-600 text-white w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-2xl text-2xl md:text-3xl z-50 transition transform hover:scale-110 pulse-animation">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- SCRIPT DO MENU MOBILE -->
+    <!-- BOTÃO VOLTAR AO TOPO -->
+    <button id="back-to-top" class="fixed bottom-24 right-6 bg-primary hover:bg-primary/80 text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg z-40 transition opacity-0 invisible" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script>
+        // MENU MOBILE
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = menuToggle.querySelector('i');
@@ -394,13 +500,43 @@
             });
         });
 
-        // ✅ Atualiza ano automaticamente no copyright
+        // BARRA DE CONTATO FIXA (aparece ao rolar)
+        const contactBar = document.getElementById('contact-bar');
+        let lastScrollY = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY > 300) {
+                contactBar.classList.remove('-translate-y-full');
+                contactBar.classList.add('translate-y-0');
+            } else {
+                contactBar.classList.add('-translate-y-full');
+                contactBar.classList.remove('translate-y-0');
+            }
+            lastScrollY = currentScrollY;
+        });
+
+        // BOTÃO VOLTAR AO TOPO
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                backToTop.classList.add('opacity-0', 'invisible');
+                backToTop.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
         document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 
-    <!-- 🆕 SCRIPT DO PORTFÓLIO (CORRIGIDO) -->
+    <!-- SCRIPT DO PORTFÓLIO -->
     <script>
-        // Imagem de fallback caso a imagem principal não carregue
         const FALLBACK_IMAGE = 'https://via.placeholder.com/800x600/0F172A/D4AF37?text=Projeto+AJ+Artes';
 
         async function loadPortfolio() {
@@ -416,9 +552,6 @@
                 }
                 
                 const data = await res.json();
-                console.log('📦 Resposta da API:', data);
-                
-                // ✅ CORREÇÃO: Verifica se é objeto com projects ou array direto
                 let projects;
                 if (Array.isArray(data)) {
                     projects = data;
@@ -428,20 +561,14 @@
                     projects = [];
                 }
                 
-                console.log('📋 Projetos encontrados:', projects.length);
-                
-                // Se não houver projetos, mantém a mensagem padrão
                 if (projects.length === 0) {
                     console.log('⚠️ Nenhum projeto encontrado');
                     return;
                 }
                 
-                // Remove mensagem de vazio
                 if (emptyMsg) emptyMsg.remove();
                 
-                // Renderiza os projetos com validações de segurança
                 grid.innerHTML = projects.map(project => {
-                    // Garante que images exista e seja array
                     const images = Array.isArray(project?.images) && project.images.length > 0 
                         ? project.images 
                         : [FALLBACK_IMAGE];
@@ -486,7 +613,6 @@
             } catch (error) {
                 console.error('❌ Erro ao carregar portfólio:', error);
                 
-                // ✅ Mensagem amigável se o servidor estiver dormindo ou com erro
                 if (emptyMsg) {
                     emptyMsg.innerHTML = `
                         <i class="fas fa-exclamation-triangle text-5xl mb-4 text-orange-400"></i>
@@ -501,7 +627,6 @@
         }
 
         function filterPortfolio(category, btnElement) {
-            // Atualiza estado visual dos botões
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 btn.classList.remove('active');
                 btn.classList.add('bg-gray-200', 'text-gray-700');
@@ -509,9 +634,7 @@
             });
             btnElement.classList.add('active');
             
-            // Filtra os projetos
             const items = document.querySelectorAll('.portfolio-item');
-            
             items.forEach(item => {
                 if (category === 'all' || item.dataset.category === category) {
                     item.style.display = 'block';
@@ -521,7 +644,6 @@
             });
         }
 
-        // Modal simples para visualizar imagens em tela cheia
         function openImageModal(src) {
             const modal = document.createElement('div');
             modal.className = 'fixed inset-0 bg-black bg-opacity-90 z-[100] flex items-center justify-center p-4 cursor-pointer';
@@ -535,7 +657,6 @@
             document.body.appendChild(modal);
         }
 
-        // Carrega o portfólio quando a página carregar
         document.addEventListener('DOMContentLoaded', () => {
             console.log('🚀 Página carregada, iniciando portfólio...');
             loadPortfolio();
