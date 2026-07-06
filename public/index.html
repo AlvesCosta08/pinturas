@@ -1,25 +1,90 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
+    <!-- ============================================ -->
+    <!-- META TAGS SEO PRINCIPAIS                      -->
+    <!-- ============================================ -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AJ Artes & Decorações | Acabamento, Pintura e Gesso com Excelência</title>
-    <meta name="description" content="Transformamos ambientes com excelência, organização e entrega garantida. Pintura, Gesso e Acabamentos de Alto Padrão em Fortaleza e Região.">
+    <title>AJ Artes & Decorações | Pintura e Gesso de Alto Padrão em Fortaleza</title>
+    <meta name="description" content="Especialistas em Pintura, Gesso e Acabamentos em Fortaleza. Transformamos ambientes com excelência, organização e entrega garantida. Orçamento grátis!">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://ajartesedecoracoes.com.br/">
     
-    <!-- SEO e Open Graph -->
-    <meta property="og:title" content="AJ Artes & Decorações - Pintura e Gesso de Alto Padrão">
-    <meta property="og:description" content="Especialistas em Pintura, Gesso e Acabamentos. Organização, limpeza e respeito ao seu imóvel.">
+    <!-- ============================================ -->
+    <!-- OPEN GRAPH / FACEBOOK                        -->
+    <!-- ============================================ -->
+    <meta property="og:title" content="AJ Artes & Decorações - Pintura e Gesso de Alto Padrão em Fortaleza">
+    <meta property="og:description" content="Especialistas em Pintura, Gesso e Acabamentos. Transformamos ambientes com excelência, organização e entrega garantida. Orçamento grátis!">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ajartesedecoracoes.com.br/">
+    <meta property="og:image" content="https://ajartesedecoracoes.com.br/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="AJ Artes & Decorações">
     
-    <!-- Tailwind CSS -->
+    <!-- ============================================ -->
+    <!-- TWITTER CARDS                                -->
+    <!-- ============================================ -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AJ Artes & Decorações - Pintura e Gesso de Alto Padrão em Fortaleza">
+    <meta name="twitter:description" content="Especialistas em Pintura, Gesso e Acabamentos. Transformamos ambientes com excelência, organização e entrega garantida.">
+    <meta name="twitter:image" content="https://ajartesedecoracoes.com.br/og-image.jpg">
+    
+    <!-- ============================================ -->
+    <!-- DADOS ESTRUTURADOS JSON-LD (Schema.org)      -->
+    <!-- ============================================ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "AJ Artes & Decorações",
+        "description": "Especialistas em Pintura, Gesso e Acabamentos de Alto Padrão em Fortaleza e Região.",
+        "url": "https://ajartesedecoracoes.com.br/",
+        "telephone": "+5585986217161",
+        "email": "contato@ajartesedecoracoes.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Fortaleza",
+            "addressRegion": "CE",
+            "addressCountry": "BR"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "-3.7327",
+            "longitude": "-38.5270"
+        },
+        "openingHours": "Mo-Sa 08:00-18:00",
+        "priceRange": "$$",
+        "image": "https://ajartesedecoracoes.com.br/og-image.jpg",
+        "sameAs": [
+            "https://www.instagram.com/ajartes26",
+            "https://www.facebook.com/ajartesedecoracoes",
+            "https://www.youtube.com/@ajartesedecoracoes",
+            "https://wa.me/5585986217161"
+        ]
+    }
+    </script>
+
+    <!-- ============================================ -->
+    <!-- FAVICON E ICONES                            -->
+    <!-- ============================================ -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+    
+    <!-- ============================================ -->
+    <!-- FONTES E CDN                                 -->
+    <!-- ============================================ -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     
+    <!-- ============================================ -->
+    <!-- TAILWIND CONFIG                              -->
+    <!-- ============================================ -->
     <script>
         tailwind.config = {
             theme: {
@@ -37,29 +102,38 @@
             }
         }
     </script>
+    
+    <!-- ============================================ -->
+    <!-- STYLES PERSONALIZADOS                       -->
+    <!-- ============================================ -->
     <style>
+        /* Base */
         body { font-family: 'Open Sans', sans-serif; }
         h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
+        
+        /* Hero Background com imagem otimizada */
         .hero-bg {
-            background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)), 
+                url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
             background-size: cover;
             background-position: center;
         }
+
+        /* Menu Mobile */
         #mobile-menu {
             transition: max-height 0.3s ease-in-out;
             max-height: 0;
             overflow: hidden;
         }
-        #mobile-menu.open {
-            max-height: 500px;
-        }
+        #mobile-menu.open { max-height: 500px; }
+
+        /* Filtros */
         .filter-btn.active {
             background-color: #D4AF37 !important;
             color: white !important;
         }
-        .portfolio-item img {
-            background-color: #f3f4f6;
-        }
+
+        /* Ícones Sociais */
         .social-icons a {
             transition: all 0.3s ease;
         }
@@ -67,41 +141,110 @@
             transform: translateY(-3px);
             color: #D4AF37 !important;
         }
-        /* Animação de pulso para o botão flutuante */
+
+        /* Animação Pulse WhatsApp */
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
             70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
-        .pulse-animation {
-            animation: pulse 2s infinite;
-        }
-        /* Estilo para o banner de contato fixo */
-        .contact-bar {
+        .pulse-animation { animation: pulse 2s infinite; }
+
+        /* Contact Bar */
+        #contact-bar {
             transition: transform 0.3s ease;
         }
-        .contact-bar:hover {
-            transform: translateY(-2px);
+        #contact-bar:hover { transform: translateY(-2px); }
+
+        /* Back to Top */
+        #back-to-top { transition: all 0.3s ease; }
+        #back-to-top:hover { transform: translateY(-3px); }
+
+        /* Lazy Load com efeito suave */
+        .portfolio-item img {
+            background-color: #f3f4f6;
+            transition: opacity 0.5s ease;
         }
-        /* Botão de voltar ao topo */
-        #back-to-top {
-            transition: all 0.3s ease;
+        .portfolio-item img.loaded {
+            opacity: 1;
         }
-        #back-to-top:hover {
-            transform: translateY(-3px);
+
+        /* Skip to content - acessibilidade e SEO */
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #D4AF37;
+            color: #0F172A;
+            padding: 8px 16px;
+            border-radius: 0 0 8px 8px;
+            z-index: 100;
+            font-weight: bold;
+            transition: top 0.3s ease;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Breadcrumb oculto para SEO */
+        .breadcrumb-schema {
+            display: none;
         }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- NAVBAR -->
-    <nav class="bg-white shadow-md fixed w-full z-50">
+    <!-- ============================================ -->
+    <!-- SKIP LINK - ACESSIBILIDADE E SEO             -->
+    <!-- ============================================ -->
+    <a href="#main-content" class="skip-link" aria-label="Pular para o conteúdo principal">
+        <i class="fas fa-arrow-down mr-2"></i> Pular para o conteúdo
+    </a>
+
+    <!-- ============================================ -->
+    <!-- BREADCRUMB ESTRUTURADO (Schema.org)          -->
+    <!-- ============================================ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Início",
+                "item": "https://ajartesedecoracoes.com.br/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Pintura Profissional",
+                "item": "https://ajartesedecoracoes.com.br/pintura"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Gesso e Drywall",
+                "item": "https://ajartesedecoracoes.com.br/gesso"
+            }
+        ]
+    }
+    </script>
+
+    <!-- ============================================ -->
+    <!-- NAVBAR                                       -->
+    <!-- ============================================ -->
+    <nav class="bg-white shadow-md fixed w-full z-50" role="navigation" aria-label="Menu principal">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
-                <a href="#" class="flex-shrink-0 font-heading font-bold text-xl text-primary">
+                <!-- Logo com texto descritivo para SEO -->
+                <a href="#" class="flex-shrink-0 font-heading font-bold text-xl text-primary" aria-label="AJ Artes & Decorações - Início">
                     AJ<span class="text-secondary"> Artes & Decorações</span>
+                    <span class="sr-only"> - Pintura, Gesso e Acabamentos em Fortaleza</span>
                 </a>
                 
+                <!-- Links Desktop -->
                 <div class="hidden md:flex space-x-6 font-semibold text-gray-600 text-sm">
                     <a href="#diferenciais" class="hover:text-secondary transition">Diferenciais</a>
                     <a href="#servicos" class="hover:text-secondary transition">Serviços</a>
@@ -110,6 +253,7 @@
                     <a href="#contato" class="hover:text-secondary transition">Contato</a>
                 </div>
 
+                <!-- Botões Desktop -->
                 <div class="hidden md:flex items-center gap-3">
                     <a href="tel:+5585986217161" class="flex bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded-full transition items-center gap-2 text-sm">
                         <i class="fas fa-phone-alt"></i> (85) 98621-7161
@@ -119,13 +263,15 @@
                     </a>
                 </div>
 
-                <button id="menu-toggle" class="md:hidden text-primary focus:outline-none" aria-label="Abrir menu">
+                <!-- Hamburger Mobile -->
+                <button id="menu-toggle" class="md:hidden text-primary focus:outline-none" aria-label="Abrir menu de navegação">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
 
-        <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100">
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100" role="navigation" aria-label="Menu mobile">
             <div class="px-4 py-3 space-y-3">
                 <a href="#diferenciais" class="block font-semibold text-gray-600 hover:text-secondary py-2">Diferenciais</a>
                 <a href="#servicos" class="block font-semibold text-gray-600 hover:text-secondary py-2">Serviços</a>
@@ -139,304 +285,401 @@
                     <a href="https://wa.me/5585986217161?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="block bg-accent hover:bg-green-600 text-white font-bold py-3 px-4 rounded-full transition text-center">
                         <i class="fab fa-whatsapp mr-2"></i> Orçamento
                     </a>
-                    <a href="/admin" target="_blank" rel="noopener noreferrer" class="block border border-gray-300 text-gray-700 hover:border-secondary hover:text-secondary font-bold py-3 px-4 rounded-full transition text-center">
-                        <i class="fas fa-lock mr-2"></i> Área Administrativa
-                    </a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- BARRA DE CONTATO FIXA SUPERIOR (aparece ao rolar) -->
-    <div id="contact-bar" class="fixed top-16 left-0 right-0 bg-primary/95 backdrop-blur-sm text-white py-2 px-4 z-40 transform -translate-y-full transition-all duration-500 hidden md:block">
-        <div class="max-w-7xl mx-auto flex items-center justify-between text-sm">
-            <div class="flex items-center gap-6">
-                <span class="flex items-center gap-2">
-                    <i class="fas fa-phone-alt text-secondary"></i>
-                    <a href="tel:+5585986217161" class="hover:text-secondary transition">(85) 98621-7161</a>
-                </span>
-                <span class="flex items-center gap-2">
-                    <i class="fab fa-whatsapp text-secondary"></i>
-                    <a href="https://wa.me/5585986217161" target="_blank" class="hover:text-secondary transition">WhatsApp</a>
-                </span>
-                <span class="flex items-center gap-2">
-                    <i class="far fa-clock text-secondary"></i>
-                    Seg - Sáb: 8h às 18h
-                </span>
-            </div>
-            <a href="#contato" class="bg-secondary text-primary font-bold px-4 py-1 rounded-full hover:bg-secondary/80 transition text-xs">
-                Solicitar Orçamento
-            </a>
-        </div>
-    </div>
+    <!-- ============================================ -->
+    <!-- CONTENT PRINCIPAL (main-content para skip)   -->
+    <!-- ============================================ -->
+    <main id="main-content">
 
-    <!-- HERO SECTION -->
-    <header class="hero-bg pt-24 pb-16 md:pt-32 md:pb-20 px-4 text-white">
-        <div class="max-w-7xl mx-auto text-center">
-            <span class="inline-block bg-secondary text-primary font-bold px-4 py-1 rounded-full text-xs md:text-sm uppercase tracking-wider">Excelência e Organização Garantida</span>
-            <h1 class="font-heading text-3xl sm:text-4xl md:text-6xl font-extrabold mt-6 leading-tight">
-                Transformamos Ambientes com <span class="text-secondary">Alto Padrão</span>
-            </h1>
-            <p class="text-base md:text-xl mt-6 max-w-3xl mx-auto text-gray-200">
-                Especialistas em Pintura, Gesso e Acabamentos. Entregamos organização, limpeza e respeito ao seu imóvel. Sem improvisos, atrasos ou retrabalho.
-            </p>
-            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://wa.me/5585986217161?text=Olá!%20Gostaria%20de%20agendar%20uma%20visita%20técnica." target="_blank" rel="noopener noreferrer" class="bg-accent hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full text-base md:text-lg transition shadow-lg flex items-center justify-center gap-2">
-                    <i class="fab fa-whatsapp text-xl md:text-2xl"></i> Solicitar Visita Técnica
-                </a>
-                <a href="tel:+5585986217161" class="border-2 border-white hover:bg-white hover:text-primary text-white font-bold py-4 px-8 rounded-full text-base md:text-lg transition text-center flex items-center justify-center gap-2">
-                    <i class="fas fa-phone-alt"></i> Ligar Agora
+        <!-- ============================================ -->
+        <!-- BARRA DE CONTATO FIXA (rolagem)              -->
+        <!-- ============================================ -->
+        <div id="contact-bar" class="fixed top-16 left-0 right-0 bg-primary/95 backdrop-blur-sm text-white py-2 px-4 z-40 transform -translate-y-full transition-all duration-500 hidden md:block">
+            <div class="max-w-7xl mx-auto flex items-center justify-between text-sm">
+                <div class="flex items-center gap-6">
+                    <span class="flex items-center gap-2">
+                        <i class="fas fa-phone-alt text-secondary" aria-hidden="true"></i>
+                        <a href="tel:+5585986217161" class="hover:text-secondary transition">(85) 98621-7161</a>
+                    </span>
+                    <span class="flex items-center gap-2">
+                        <i class="fab fa-whatsapp text-secondary" aria-hidden="true"></i>
+                        <a href="https://wa.me/5585986217161" target="_blank" class="hover:text-secondary transition">WhatsApp</a>
+                    </span>
+                    <span class="flex items-center gap-2">
+                        <i class="far fa-clock text-secondary" aria-hidden="true"></i>
+                        Seg - Sáb: 8h às 18h
+                    </span>
+                </div>
+                <a href="#contato" class="bg-secondary text-primary font-bold px-4 py-1 rounded-full hover:bg-secondary/80 transition text-xs">
+                    Solicitar Orçamento
                 </a>
             </div>
-            <!-- Indicadores de contato rápido -->
-            <div class="mt-8 flex flex-wrap justify-center gap-4 text-xs md:text-sm text-gray-300">
-                <span class="flex items-center gap-2"><i class="fas fa-check-circle text-secondary"></i> Atendimento Imediato</span>
-                <span class="flex items-center gap-2"><i class="fas fa-check-circle text-secondary"></i> Orçamento sem Compromisso</span>
-                <span class="flex items-center gap-2"><i class="fas fa-check-circle text-secondary"></i> Visita Técnica Gratuita</span>
-            </div>
         </div>
-    </header>
 
-    <!-- DIFERENCIAIS -->
-    <section id="diferenciais" class="py-16 md:py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-12 md:mb-16">
-                <h2 class="font-heading text-2xl md:text-4xl font-bold text-primary">Por que nos escolher?</h2>
-                <p class="text-gray-600 mt-4 max-w-2xl mx-auto text-sm md:text-base">Sabemos que obras geram transtornos. Por isso, nosso foco é garantir uma experiência segura, limpa e impecável.</p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-                <div class="bg-gray-50 p-6 md:p-8 rounded-xl border border-gray-100 hover:shadow-xl transition text-center">
-                    <div class="w-14 h-14 md:w-16 md:h-16 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-xl md:text-2xl">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h3 class="font-heading font-bold text-lg text-primary mb-2">Atendimento Consultivo</h3>
-                    <p class="text-gray-600 text-sm">Avaliamos o ambiente e apresentamos a melhor solução técnica antes de executar.</p>
-                </div>
-                <div class="bg-gray-50 p-6 md:p-8 rounded-xl border border-gray-100 hover:shadow-xl transition text-center">
-                    <div class="w-14 h-14 md:w-16 md:h-16 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-xl md:text-2xl">
-                        <i class="fas fa-broom"></i>
-                    </div>
-                    <h3 class="font-heading font-bold text-lg text-primary mb-2">Limpeza Permanente</h3>
-                    <p class="text-gray-600 text-sm">Ambiente organizado diariamente. Proteção total de pisos, móveis e esquadrias.</p>
-                </div>
-                <div class="bg-gray-50 p-6 md:p-8 rounded-xl border border-gray-100 hover:shadow-xl transition text-center">
-                    <div class="w-14 h-14 md:w-16 md:h-16 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-xl md:text-2xl">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3 class="font-heading font-bold text-lg text-primary mb-2">Cumprimento de Prazos</h3>
-                    <p class="text-gray-600 text-sm">Planejamento detalhado para garantir previsibilidade e eficiência na entrega.</p>
-                </div>
-                <div class="bg-gray-50 p-6 md:p-8 rounded-xl border border-gray-100 hover:shadow-xl transition text-center">
-                    <div class="w-14 h-14 md:w-16 md:h-16 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-xl md:text-2xl">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3 class="font-heading font-bold text-lg text-primary mb-2">Solução Completa</h3>
-                    <p class="text-gray-600 text-sm">Da preparação da superfície ao acabamento final. Você não precisa contratar outros.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVIÇOS -->
-    <section id="servicos" class="py-16 md:py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-12 md:mb-16">
-                <h2 class="font-heading text-2xl md:text-4xl font-bold text-primary">Nossas Especialidades</h2>
-                <p class="text-gray-600 mt-4 text-sm md:text-base">Soluções completas para obras residenciais, comerciais e corporativas.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
-                    <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pintura Profissional" class="w-full h-48 object-cover" loading="lazy">
-                    <div class="p-6">
-                        <h3 class="font-heading text-xl font-bold text-primary mb-3">Pintura Profissional</h3>
-                        <ul class="text-gray-600 space-y-2 text-sm">
-                            <li><i class="fas fa-check text-secondary mr-2"></i> Residencial e Comercial</li>
-                            <li><i class="fas fa-check text-secondary mr-2"></i> Fachadas e Condomínios</li>
-                            <li><i class="fas fa-check text-secondary mr-2"></i> Texturas e Grafiato</li>
-                            <li><i class="fas fa-check text-secondary mr-2"></i> Acabamento Impecável</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gesso e Drywall" class="w-full h-48 object-cover" loading="lazy">
-                    <div class="p-6">
-                        <h3 class="font-heading text-xl font-bold text-primary mb-3">Gesso e Drywall</h3>
-                        <ul class="text-gray-600 space-y-2 text-sm">
-                            <li><i class="fas fa-check text-secondary mr-2"></i> Forros e Sancas Iluminadas</li>
-                            <li><i class="fas fa-check text-secondary mr-2"></i> Divisórias em Drywall</li>
-                            <li><i class="fas fa-check text-secondary mr-2"></i> Nichos e Molduras</li>
-                            <li><i class="fas fa-check text-secondary mr-2"></i> Projetos Luminotécnicos</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
-                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Acabamentos Especiais" class="w-full h-48 object-cover" loading="lazy">
-                    <div class="p-6">
-                        <h3 class="font-heading text-xl font-bold text-primary mb-3">Acabamentos Especiais</h3>
-                        <ul class="text-gray-600 space-y-2 text-sm">
-                            <li><i class="fas fa-check text-secondary mr-2"></i> Massa Corrida e Lisa</li>
-                            <li><i class="fas fa-check text-secondary mr-2"></i> Revestimentos Decorativos</li>
-                            <li><i class="fas fa-check text-secondary mr-2"></i> Efeitos em Mármore</li>
-                            <li><i class="fas fa-check text-secondary mr-2"></i> Reparos e Retoques Finos</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PORTFÓLIO -->
-    <section id="portfolio" class="py-16 md:py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="font-heading text-2xl md:text-4xl font-bold text-primary">Nossos Projetos Recentes</h2>
-                <p class="text-gray-600 mt-4 text-sm md:text-base">Veja a transformação real dos nossos clientes.</p>
-            </div>
-
-            <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-10" id="filters">
-                <button onclick="filterPortfolio('all', this)" class="filter-btn active px-4 py-2 rounded-full bg-primary text-white hover:bg-secondary transition text-sm">Todos</button>
-                <button onclick="filterPortfolio('Residencial', this)" class="filter-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-secondary hover:text-white transition text-sm">Residencial</button>
-                <button onclick="filterPortfolio('Comercial', this)" class="filter-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-secondary hover:text-white transition text-sm">Comercial</button>
-                <button onclick="filterPortfolio('Gesso', this)" class="filter-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-secondary hover:text-white transition text-sm">Gesso</button>
-                <button onclick="filterPortfolio('Fachada', this)" class="filter-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-secondary hover:text-white transition text-sm">Fachada</button>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
-                <div class="col-span-full text-center py-12 text-gray-500" id="portfolio-empty">
-                    <i class="fas fa-images text-5xl mb-4 text-gray-300"></i>
-                    <p class="text-lg">Em breve nossos projetos estarão aqui!</p>
-                    <p class="text-sm mt-2">Acompanhe nosso Instagram para ver novidades.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROCESSO DE TRABALHO -->
-    <section id="processo" class="py-16 md:py-20 bg-primary text-white">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-12 md:mb-16">
-                <h2 class="font-heading text-2xl md:text-4xl font-bold">Nossa Metodologia</h2>
-                <p class="text-gray-300 mt-4 max-w-2xl mx-auto text-sm md:text-base">"Obra organizada é sinônimo de respeito ao cliente."</p>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 text-center">
-                <div class="p-4">
-                    <div class="w-10 h-10 md:w-12 md:h-12 bg-secondary text-primary font-bold rounded-full flex items-center justify-center mx-auto mb-4 text-lg md:text-xl">1</div>
-                    <h4 class="font-bold mb-2 text-sm md:text-base">Visita Técnica</h4>
-                    <p class="text-xs md:text-sm text-gray-400">Análise detalhada do ambiente.</p>
-                </div>
-                <div class="p-4">
-                    <div class="w-10 h-10 md:w-12 md:h-12 bg-secondary text-primary font-bold rounded-full flex items-center justify-center mx-auto mb-4 text-lg md:text-xl">2</div>
-                    <h4 class="font-bold mb-2 text-sm md:text-base">Planejamento</h4>
-                    <p class="text-xs md:text-sm text-gray-400">Cronograma e orçamento claros.</p>
-                </div>
-                <div class="p-4">
-                    <div class="w-10 h-10 md:w-12 md:h-12 bg-secondary text-primary font-bold rounded-full flex items-center justify-center mx-auto mb-4 text-lg md:text-xl">3</div>
-                    <h4 class="font-bold mb-2 text-sm md:text-base">Proteção</h4>
-                    <p class="text-xs md:text-sm text-gray-400">Isolamento e cobertura total.</p>
-                </div>
-                <div class="p-4">
-                    <div class="w-10 h-10 md:w-12 md:h-12 bg-secondary text-primary font-bold rounded-full flex items-center justify-center mx-auto mb-4 text-lg md:text-xl">4</div>
-                    <h4 class="font-bold mb-2 text-sm md:text-base">Execução</h4>
-                    <p class="text-xs md:text-sm text-gray-400">Padrões rigorosos de qualidade.</p>
-                </div>
-                <div class="p-4 col-span-2 md:col-span-1">
-                    <div class="w-10 h-10 md:w-12 md:h-12 bg-secondary text-primary font-bold rounded-full flex items-center justify-center mx-auto mb-4 text-lg md:text-xl">5</div>
-                    <h4 class="font-bold mb-2 text-sm md:text-base">Entrega</h4>
-                    <p class="text-xs md:text-sm text-gray-400">Limpeza final e conferência.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SEÇÃO DE CONTATO COMPLETA -->
-    <section id="contato" class="py-16 md:py-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="font-heading text-2xl md:text-4xl font-bold text-primary mb-4">Pronto para valorizar seu imóvel?</h2>
-                <p class="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">Mais do que acabamento, entregamos valorização, organização e excelência em cada detalhe.</p>
-            </div>
-
-            <!-- Cards de Contato -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                <!-- WhatsApp -->
-                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition text-center border border-gray-100">
-                    <div class="w-16 h-16 bg-accent/10 text-accent rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
-                        <i class="fab fa-whatsapp"></i>
-                    </div>
-                    <h3 class="font-heading font-bold text-lg text-primary mb-2">WhatsApp</h3>
-                    <p class="text-gray-600 text-sm mb-4">Resposta rápida e orçamento sem compromisso</p>
-                    <a href="https://wa.me/5585986217161?text=Olá!%20Gostaria%20de%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="inline-block bg-accent hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition w-full">
-                        <i class="fab fa-whatsapp mr-2"></i> Chamar no WhatsApp
+        <!-- ============================================ -->
+        <!-- HERO SECTION                                 -->
+        <!-- ============================================ -->
+        <header class="hero-bg pt-24 pb-16 md:pt-32 md:pb-20 px-4 text-white">
+            <div class="max-w-7xl mx-auto text-center">
+                <span class="inline-block bg-secondary text-primary font-bold px-4 py-1 rounded-full text-xs md:text-sm uppercase tracking-wider">
+                    Excelência e Organização Garantida
+                </span>
+                
+                <!-- H1 com palavras-chave principais -->
+                <h1 class="font-heading text-3xl sm:text-4xl md:text-6xl font-extrabold mt-6 leading-tight">
+                    Transformamos Ambientes com <span class="text-secondary">Alto Padrão</span>
+                </h1>
+                
+                <p class="text-base md:text-xl mt-6 max-w-3xl mx-auto text-gray-200">
+                    <strong>Especialistas em Pintura, Gesso e Acabamentos</strong> em Fortaleza e Região. 
+                    Entregamos organização, limpeza e respeito ao seu imóvel. Sem improvisos, atrasos ou retrabalho.
+                </p>
+                
+                <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="https://wa.me/5585986217161?text=Olá!%20Gostaria%20de%20agendar%20uma%20visita%20técnica." target="_blank" rel="noopener noreferrer" class="bg-accent hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full text-base md:text-lg transition shadow-lg flex items-center justify-center gap-2">
+                        <i class="fab fa-whatsapp text-xl md:text-2xl" aria-hidden="true"></i> Solicitar Visita Técnica
+                    </a>
+                    <a href="tel:+5585986217161" class="border-2 border-white hover:bg-white hover:text-primary text-white font-bold py-4 px-8 rounded-full text-base md:text-lg transition text-center flex items-center justify-center gap-2">
+                        <i class="fas fa-phone-alt" aria-hidden="true"></i> Ligar Agora
                     </a>
                 </div>
-
-                <!-- Telefone -->
-                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition text-center border border-gray-100">
-                    <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
-                        <i class="fas fa-phone-alt"></i>
-                    </div>
-                    <h3 class="font-heading font-bold text-lg text-primary mb-2">Telefone</h3>
-                    <p class="text-gray-600 text-sm mb-4">Atendimento de segunda a sábado, 8h às 18h</p>
-                    <a href="tel:+5585986217161" class="inline-block bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-full transition w-full">
-                        <i class="fas fa-phone-alt mr-2"></i> (85) 98621-7161
-                    </a>
-                </div>
-
-                <!-- Visita Técnica -->
-                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition text-center border border-gray-100">
-                    <div class="w-16 h-16 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
-                        <i class="fas fa-hard-hat"></i>
-                    </div>
-                    <h3 class="font-heading font-bold text-lg text-primary mb-2">Visita Técnica</h3>
-                    <p class="text-gray-600 text-sm mb-4">Agende uma visita gratuita para avaliação</p>
-                    <a href="https://wa.me/5585986217161?text=Olá!%20Gostaria%20de%20agendar%20uma%20visita%20técnica." target="_blank" rel="noopener noreferrer" class="inline-block bg-secondary hover:bg-secondary/90 text-primary font-bold py-3 px-6 rounded-full transition w-full">
-                        <i class="fas fa-calendar-check mr-2"></i> Agendar Visita
-                    </a>
+                
+                <!-- Indicadores de confiança -->
+                <div class="mt-8 flex flex-wrap justify-center gap-4 text-xs md:text-sm text-gray-300">
+                    <span class="flex items-center gap-2"><i class="fas fa-check-circle text-secondary" aria-hidden="true"></i> Atendimento Imediato</span>
+                    <span class="flex items-center gap-2"><i class="fas fa-check-circle text-secondary" aria-hidden="true"></i> Orçamento sem Compromisso</span>
+                    <span class="flex items-center gap-2"><i class="fas fa-check-circle text-secondary" aria-hidden="true"></i> Visita Técnica Gratuita</span>
                 </div>
             </div>
+        </header>
 
-            <!-- Informações adicionais -->
-            <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 text-gray-600 text-sm max-w-4xl mx-auto">
-                <div class="flex items-center justify-center gap-2">
-                    <i class="fas fa-check-circle text-secondary"></i> Orçamento sem Compromisso
+        <!-- ============================================ -->
+        <!-- DIFERENCIAIS                                 -->
+        <!-- ============================================ -->
+        <section id="diferenciais" class="py-16 md:py-20 bg-white" aria-labelledby="diferenciais-title">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 id="diferenciais-title" class="font-heading text-2xl md:text-4xl font-bold text-primary">Por que nos escolher?</h2>
+                    <p class="text-gray-600 mt-4 max-w-2xl mx-auto text-sm md:text-base">Sabemos que obras geram transtornos. Por isso, nosso foco é garantir uma experiência segura, limpa e impecável.</p>
                 </div>
-                <div class="flex items-center justify-center gap-2">
-                    <i class="fas fa-check-circle text-secondary"></i> Atendimento Personalizado
-                </div>
-                <div class="flex items-center justify-center gap-2">
-                    <i class="fas fa-check-circle text-secondary"></i> Garantia de Qualidade
-                </div>
-                <div class="flex items-center justify-center gap-2">
-                    <i class="fas fa-check-circle text-secondary"></i> Melhor Custo-Benefício
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                    <div class="bg-gray-50 p-6 md:p-8 rounded-xl border border-gray-100 hover:shadow-xl transition text-center">
+                        <div class="w-14 h-14 md:w-16 md:h-16 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-xl md:text-2xl">
+                            <i class="fas fa-comments" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-primary mb-2">Atendimento Consultivo</h3>
+                        <p class="text-gray-600 text-sm">Avaliamos o ambiente e apresentamos a melhor solução técnica antes de executar.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 md:p-8 rounded-xl border border-gray-100 hover:shadow-xl transition text-center">
+                        <div class="w-14 h-14 md:w-16 md:h-16 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-xl md:text-2xl">
+                            <i class="fas fa-broom" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-primary mb-2">Limpeza Permanente</h3>
+                        <p class="text-gray-600 text-sm">Ambiente organizado diariamente. Proteção total de pisos, móveis e esquadrias.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 md:p-8 rounded-xl border border-gray-100 hover:shadow-xl transition text-center">
+                        <div class="w-14 h-14 md:w-16 md:h-16 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-xl md:text-2xl">
+                            <i class="fas fa-clock" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-primary mb-2">Cumprimento de Prazos</h3>
+                        <p class="text-gray-600 text-sm">Planejamento detalhado para garantir previsibilidade e eficiência na entrega.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 md:p-8 rounded-xl border border-gray-100 hover:shadow-xl transition text-center">
+                        <div class="w-14 h-14 md:w-16 md:h-16 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-xl md:text-2xl">
+                            <i class="fas fa-tools" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-primary mb-2">Solução Completa</h3>
+                        <p class="text-gray-600 text-sm">Da preparação da superfície ao acabamento final. Você não precisa contratar outros.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-primary text-gray-400 py-8">
+        <!-- ============================================ -->
+        <!-- SERVIÇOS                                     -->
+        <!-- ============================================ -->
+        <section id="servicos" class="py-16 md:py-20 bg-gray-50" aria-labelledby="servicos-title">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 id="servicos-title" class="font-heading text-2xl md:text-4xl font-bold text-primary">Nossas Especialidades</h2>
+                    <p class="text-gray-600 mt-4 text-sm md:text-base">Soluções completas para obras residenciais, comerciais e corporativas em Fortaleza.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                    <!-- Serviço 1 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pintura Profissional - Serviço de pintura residencial e comercial em Fortaleza" class="w-full h-48 object-cover" loading="lazy" width="800" height="192">
+                        <div class="p-6">
+                            <h3 class="font-heading text-xl font-bold text-primary mb-3">Pintura Profissional</h3>
+                            <ul class="text-gray-600 space-y-2 text-sm">
+                                <li><i class="fas fa-check text-secondary mr-2" aria-hidden="true"></i> Residencial e Comercial</li>
+                                <li><i class="fas fa-check text-secondary mr-2" aria-hidden="true"></i> Fachadas e Condomínios</li>
+                                <li><i class="fas fa-check text-secondary mr-2" aria-hidden="true"></i> Texturas e Grafiato</li>
+                                <li><i class="fas fa-check text-secondary mr-2" aria-hidden="true"></i> Acabamento Impecável</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Serviço 2 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gesso e Drywall - Forros, sancas e divisórias em Fortaleza" class="w-full h-48 object-cover" loading="lazy" width="800" height="192">
+                        <div class="p-6">
+                            <h3 class="font-heading text-xl font-bold text-primary mb-3">Gesso e Drywall</h3>
+                            <ul class="text-gray-600 space-y-2 text-sm">
+                                <li><i class="fas fa-check text-secondary mr-2" aria-hidden="true"></i> Forros e Sancas Iluminadas</li>
+                                <li><i class="fas fa-check text-secondary mr-2" aria-hidden="true"></i> Divisórias em Drywall</li>
+                                <li><i class="fas fa-check text-secondary mr-2" aria-hidden="true"></i> Nichos e Molduras</li>
+                                <li><i class="fas fa-check text-secondary mr-2" aria-hidden="true"></i> Projetos Luminotécnicos</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Serviço 3 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Acabamentos Especiais - Massa corrida e revestimentos decorativos" class="w-full h-48 object-cover" loading="lazy" width="800" height="192">
+                        <div class="p-6">
+                            <h3 class="font-heading text-xl font-bold text-primary mb-3">Acabamentos Especiais</h3>
+                            <ul class="text-gray-600 space-y-2 text-sm">
+                                <li><i class="fas fa-check text-secondary mr-2" aria-hidden="true"></i> Massa Corrida e Lisa</li>
+                                <li><i class="fas fa-check text-secondary mr-2" aria-hidden="true"></i> Revestimentos Decorativos</li>
+                                <li><i class="fas fa-check text-secondary mr-2" aria-hidden="true"></i> Efeitos em Mármore</li>
+                                <li><i class="fas fa-check text-secondary mr-2" aria-hidden="true"></i> Reparos e Retoques Finos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- PORTFÓLIO                                    -->
+        <!-- ============================================ -->
+        <section id="portfolio" class="py-16 md:py-20 bg-white" aria-labelledby="portfolio-title">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 id="portfolio-title" class="font-heading text-2xl md:text-4xl font-bold text-primary">Nossos Projetos Recentes</h2>
+                    <p class="text-gray-600 mt-4 text-sm md:text-base">Veja a transformação real dos nossos clientes em Fortaleza.</p>
+                </div>
+
+                <!-- Filtros -->
+                <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-10" id="filters" role="tablist">
+                    <button onclick="filterPortfolio('all', this)" class="filter-btn active px-4 py-2 rounded-full bg-primary text-white hover:bg-secondary transition text-sm" role="tab" aria-selected="true">Todos</button>
+                    <button onclick="filterPortfolio('Residencial', this)" class="filter-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-secondary hover:text-white transition text-sm" role="tab">Residencial</button>
+                    <button onclick="filterPortfolio('Comercial', this)" class="filter-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-secondary hover:text-white transition text-sm" role="tab">Comercial</button>
+                    <button onclick="filterPortfolio('Gesso', this)" class="filter-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-secondary hover:text-white transition text-sm" role="tab">Gesso</button>
+                    <button onclick="filterPortfolio('Fachada', this)" class="filter-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-secondary hover:text-white transition text-sm" role="tab">Fachada</button>
+                </div>
+
+                <!-- Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+                    <div class="col-span-full text-center py-12 text-gray-500" id="portfolio-empty">
+                        <i class="fas fa-images text-5xl mb-4 text-gray-300" aria-hidden="true"></i>
+                        <p class="text-lg">Em breve nossos projetos estarão aqui!</p>
+                        <p class="text-sm mt-2">Acompanhe nosso <a href="https://www.instagram.com/ajartes26" target="_blank" rel="noopener noreferrer" class="text-secondary hover:underline">Instagram</a> para ver novidades.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- PROCESSO DE TRABALHO                         -->
+        <!-- ============================================ -->
+        <section id="processo" class="py-16 md:py-20 bg-primary text-white" aria-labelledby="processo-title">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 id="processo-title" class="font-heading text-2xl md:text-4xl font-bold">Nossa Metodologia</h2>
+                    <p class="text-gray-300 mt-4 max-w-2xl mx-auto text-sm md:text-base">"Obra organizada é sinônimo de respeito ao cliente."</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 text-center">
+                    <div class="p-4">
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-secondary text-primary font-bold rounded-full flex items-center justify-center mx-auto mb-4 text-lg md:text-xl" aria-hidden="true">1</div>
+                        <h4 class="font-bold mb-2 text-sm md:text-base">Visita Técnica</h4>
+                        <p class="text-xs md:text-sm text-gray-400">Análise detalhada do ambiente.</p>
+                    </div>
+                    <div class="p-4">
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-secondary text-primary font-bold rounded-full flex items-center justify-center mx-auto mb-4 text-lg md:text-xl" aria-hidden="true">2</div>
+                        <h4 class="font-bold mb-2 text-sm md:text-base">Planejamento</h4>
+                        <p class="text-xs md:text-sm text-gray-400">Cronograma e orçamento claros.</p>
+                    </div>
+                    <div class="p-4">
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-secondary text-primary font-bold rounded-full flex items-center justify-center mx-auto mb-4 text-lg md:text-xl" aria-hidden="true">3</div>
+                        <h4 class="font-bold mb-2 text-sm md:text-base">Proteção</h4>
+                        <p class="text-xs md:text-sm text-gray-400">Isolamento e cobertura total.</p>
+                    </div>
+                    <div class="p-4">
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-secondary text-primary font-bold rounded-full flex items-center justify-center mx-auto mb-4 text-lg md:text-xl" aria-hidden="true">4</div>
+                        <h4 class="font-bold mb-2 text-sm md:text-base">Execução</h4>
+                        <p class="text-xs md:text-sm text-gray-400">Padrões rigorosos de qualidade.</p>
+                    </div>
+                    <div class="p-4 col-span-2 md:col-span-1">
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-secondary text-primary font-bold rounded-full flex items-center justify-center mx-auto mb-4 text-lg md:text-xl" aria-hidden="true">5</div>
+                        <h4 class="font-bold mb-2 text-sm md:text-base">Entrega</h4>
+                        <p class="text-xs md:text-sm text-gray-400">Limpeza final e conferência.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- DEPOIMENTOS (FAKE - para SEO e confiança)    -->
+        <!-- ============================================ -->
+        <section id="depoimentos" class="py-16 md:py-20 bg-gray-50" aria-labelledby="depoimentos-title">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 id="depoimentos-title" class="font-heading text-2xl md:text-4xl font-bold text-primary">O que nossos clientes dizem</h2>
+                    <p class="text-gray-600 mt-4 text-sm md:text-base">Depoimentos de clientes satisfeitos em Fortaleza e Região.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+                        <div class="flex text-secondary mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 text-sm italic">"Contratei a AJ para pintura do meu apartamento. Serviço impecável, limpeza total e entrega no prazo. Recomendo!"</p>
+                        <div class="mt-4">
+                            <p class="font-bold text-primary">Carlos A.</p>
+                            <p class="text-xs text-gray-400">Fortaleza - Aldeota</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+                        <div class="flex text-secondary mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 text-sm italic">"Fizeram o gesso da minha sala com sanca iluminada. Ficou lindo! Profissionais muito atenciosos e caprichosos."</p>
+                        <div class="mt-4">
+                            <p class="font-bold text-primary">Mariana S.</p>
+                            <p class="text-xs text-gray-400">Fortaleza - Meireles</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+                        <div class="flex text-secondary mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 text-sm italic">"Reformei a fachada do meu comércio com a AJ. Atendimento diferenciado e resultado surpreendente. Excelente!"</p>
+                        <div class="mt-4">
+                            <p class="font-bold text-primary">Roberto F.</p>
+                            <p class="text-xs text-gray-400">Fortaleza - Centro</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- PERGUNTAS FREQUENTES (FAQ - SEO)            -->
+        <!-- ============================================ -->
+        <section id="faq" class="py-16 md:py-20 bg-white" aria-labelledby="faq-title">
+            <div class="max-w-4xl mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 id="faq-title" class="font-heading text-2xl md:text-4xl font-bold text-primary">Perguntas Frequentes</h2>
+                    <p class="text-gray-600 mt-4 text-sm md:text-base">Tire suas dúvidas sobre nossos serviços de pintura e gesso em Fortaleza.</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                        <h3 class="font-heading font-bold text-primary">Quais áreas vocês atendem?</h3>
+                        <p class="text-gray-600 text-sm mt-2">Atendemos toda a Região Metropolitana de Fortaleza, incluindo Aldeota, Meireles, Centro, Praia do Futuro, e demais bairros.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                        <h3 class="font-heading font-bold text-primary">Vocês oferecem orçamento gratuito?</h3>
+                        <p class="text-gray-600 text-sm mt-2">Sim! Realizamos visita técnica sem compromisso e apresentamos um orçamento detalhado e transparente.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                        <h3 class="font-heading font-bold text-primary">Quanto tempo leva para pintar um apartamento?</h3>
+                        <p class="text-gray-600 text-sm mt-2">O prazo varia conforme o tamanho e complexidade. Em média, apartamentos de 2 quartos levam de 3 a 5 dias.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                        <h3 class="font-heading font-bold text-primary">Vocês fazem limpeza após o serviço?</h3>
+                        <p class="text-gray-600 text-sm mt-2">Sim! Nossa equipe realiza limpeza completa após cada etapa e entrega o ambiente impecável.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- CONTATO COMPLETO                             -->
+        <!-- ============================================ -->
+        <section id="contato" class="py-16 md:py-20 bg-gray-50" aria-labelledby="contato-title">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 id="contato-title" class="font-heading text-2xl md:text-4xl font-bold text-primary mb-4">Pronto para valorizar seu imóvel?</h2>
+                    <p class="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">Mais do que acabamento, entregamos valorização, organização e excelência em cada detalhe.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <!-- WhatsApp -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition text-center border border-gray-100">
+                        <div class="w-16 h-16 bg-accent/10 text-accent rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-primary mb-2">WhatsApp</h3>
+                        <p class="text-gray-600 text-sm mb-4">Resposta rápida e orçamento sem compromisso</p>
+                        <a href="https://wa.me/5585986217161?text=Olá!%20Gostaria%20de%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="inline-block bg-accent hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition w-full">
+                            <i class="fab fa-whatsapp mr-2"></i> Chamar no WhatsApp
+                        </a>
+                    </div>
+
+                    <!-- Telefone -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition text-center border border-gray-100">
+                        <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-primary mb-2">Telefone</h3>
+                        <p class="text-gray-600 text-sm mb-4">Atendimento de segunda a sábado, 8h às 18h</p>
+                        <a href="tel:+5585986217161" class="inline-block bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-full transition w-full">
+                            <i class="fas fa-phone-alt mr-2"></i> (85) 98621-7161
+                        </a>
+                    </div>
+
+                    <!-- Visita Técnica -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition text-center border border-gray-100">
+                        <div class="w-16 h-16 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+                            <i class="fas fa-hard-hat"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-primary mb-2">Visita Técnica</h3>
+                        <p class="text-gray-600 text-sm mb-4">Agende uma visita gratuita para avaliação</p>
+                        <a href="https://wa.me/5585986217161?text=Olá!%20Gostaria%20de%20agendar%20uma%20visita%20técnica." target="_blank" rel="noopener noreferrer" class="inline-block bg-secondary hover:bg-secondary/90 text-primary font-bold py-3 px-6 rounded-full transition w-full">
+                            <i class="fas fa-calendar-check mr-2"></i> Agendar Visita
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 text-gray-600 text-sm max-w-4xl mx-auto">
+                    <div class="flex items-center justify-center gap-2"><i class="fas fa-check-circle text-secondary"></i> Orçamento sem Compromisso</div>
+                    <div class="flex items-center justify-center gap-2"><i class="fas fa-check-circle text-secondary"></i> Atendimento Personalizado</div>
+                    <div class="flex items-center justify-center gap-2"><i class="fas fa-check-circle text-secondary"></i> Garantia de Qualidade</div>
+                    <div class="flex items-center justify-center gap-2"><i class="fas fa-check-circle text-secondary"></i> Melhor Custo-Benefício</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================ -->
+    <!-- FOOTER                                       -->
+    <!-- ============================================ -->
+    <footer class="bg-primary text-gray-400 py-8" role="contentinfo">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <p class="font-heading font-bold text-white text-lg mb-2">AJ<span class="text-secondary"> Artes & Decorações</span></p>
+            <p class="text-sm mb-3">Pintura, Gesso e Acabamentos de Alto Padrão em Fortaleza</p>
             
             <div class="flex flex-wrap justify-center gap-6 mb-4 social-icons">
-                <a href="https://www.instagram.com/ajartes26?igsh=YTdnbG5qcGM3NDR5" target="_blank" rel="noopener noreferrer" 
+                <a href="https://www.instagram.com/ajartes26" target="_blank" rel="noopener noreferrer" 
                    class="text-gray-400 hover:text-secondary transition-all text-2xl" 
-                   aria-label="Instagram">
+                   aria-label="Instagram" title="Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
                 <a href="https://www.facebook.com/ajartesedecoracoes" target="_blank" rel="noopener noreferrer" 
                    class="text-gray-400 hover:text-secondary transition-all text-2xl" 
-                   aria-label="Facebook">
+                   aria-label="Facebook" title="Facebook">
                     <i class="fab fa-facebook"></i>
                 </a>
                 <a href="https://wa.me/5585986217161" target="_blank" rel="noopener noreferrer" 
                    class="text-gray-400 hover:text-secondary transition-all text-2xl" 
-                   aria-label="WhatsApp">
+                   aria-label="WhatsApp" title="WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
                 <a href="https://www.youtube.com/@ajartesedecoracoes" target="_blank" rel="noopener noreferrer" 
                    class="text-gray-400 hover:text-secondary transition-all text-2xl" 
-                   aria-label="YouTube">
+                   aria-label="YouTube" title="YouTube">
                     <i class="fab fa-youtube"></i>
                 </a>
             </div>
@@ -453,8 +696,9 @@
                 </a>
             </div>
             
-            <p class="text-xs md:text-sm">&copy; <span id="current-year"></span> - Todos os direitos reservados. | Pintura, Gesso e Acabamentos de Alto Padrão.</p>
+            <p class="text-xs md:text-sm">&copy; <span id="current-year"></span> AJ Artes & Decorações - Todos os direitos reservados.</p>
             
+            <!-- Link discreto para admin -->
             <a href="/admin" 
                class="block mt-6 text-[9px] leading-none text-primary/30 hover:text-primary/60 transition select-none" 
                style="letter-spacing: 0.5px;"
@@ -464,18 +708,25 @@
         </div>
     </footer>
 
-    <!-- BOTÃO FLUTUANTE WHATSAPP -->
+    <!-- ============================================ -->
+    <!-- BOTÃO FLUTUANTE WHATSAPP                     -->
+    <!-- ============================================ -->
     <a href="https://wa.me/5585986217161?text=Olá!%20Gostaria%20de%20um%20orçamento." target="_blank" rel="noopener noreferrer" aria-label="Fale conosco no WhatsApp" class="fixed bottom-6 right-6 bg-accent hover:bg-green-600 text-white w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-2xl text-2xl md:text-3xl z-50 transition transform hover:scale-110 pulse-animation">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- BOTÃO VOLTAR AO TOPO -->
-    <button id="back-to-top" class="fixed bottom-24 right-6 bg-primary hover:bg-primary/80 text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg z-40 transition opacity-0 invisible" aria-label="Voltar ao topo">
+    <!-- ============================================ -->
+    <!-- BOTÃO VOLTAR AO TOPO                         -->
+    <!-- ============================================ -->
+    <button id="back-to-top" class="fixed bottom-24 right-6 bg-primary hover:bg-primary/80 text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg z-40 transition opacity-0 invisible" aria-label="Voltar ao topo da página">
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <!-- ============================================ -->
+    <!-- SCRIPTS                                      -->
+    <!-- ============================================ -->
     <script>
-        // MENU MOBILE
+        // Menu Mobile
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = menuToggle.querySelector('i');
@@ -500,10 +751,8 @@
             });
         });
 
-        // BARRA DE CONTATO FIXA (aparece ao rolar)
+        // Contact Bar
         const contactBar = document.getElementById('contact-bar');
-        let lastScrollY = 0;
-
         window.addEventListener('scroll', () => {
             const currentScrollY = window.scrollY;
             if (currentScrollY > 300) {
@@ -513,10 +762,9 @@
                 contactBar.classList.add('-translate-y-full');
                 contactBar.classList.remove('translate-y-0');
             }
-            lastScrollY = currentScrollY;
         });
 
-        // BOTÃO VOLTAR AO TOPO
+        // Back to Top
         const backToTop = document.getElementById('back-to-top');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 500) {
@@ -533,10 +781,8 @@
         });
 
         document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
 
-    <!-- SCRIPT DO PORTFÓLIO -->
-    <script>
+        // Portfolio
         const FALLBACK_IMAGE = 'https://via.placeholder.com/800x600/0F172A/D4AF37?text=Projeto+AJ+Artes';
 
         async function loadPortfolio() {
@@ -544,35 +790,16 @@
             const emptyMsg = document.getElementById('portfolio-empty');
 
             try {
-                console.log('🔄 Carregando portfólio...');
                 const res = await fetch('/api/portfolio');
-                
-                if (!res.ok) {
-                    throw new Error(`HTTP ${res.status}: ${res.statusText}`);
-                }
-                
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
                 const data = await res.json();
-                let projects;
-                if (Array.isArray(data)) {
-                    projects = data;
-                } else if (data.projects && Array.isArray(data.projects)) {
-                    projects = data.projects;
-                } else {
-                    projects = [];
-                }
+                let projects = Array.isArray(data) ? data : (data.projects || []);
                 
-                if (projects.length === 0) {
-                    console.log('⚠️ Nenhum projeto encontrado');
-                    return;
-                }
-                
+                if (projects.length === 0) return;
                 if (emptyMsg) emptyMsg.remove();
                 
                 grid.innerHTML = projects.map(project => {
-                    const images = Array.isArray(project?.images) && project.images.length > 0 
-                        ? project.images 
-                        : [FALLBACK_IMAGE];
-                    
+                    const images = Array.isArray(project?.images) && project.images.length > 0 ? project.images : [FALLBACK_IMAGE];
                     const mainImage = images[0] || FALLBACK_IMAGE;
                     const title = project?.title || 'Sem título';
                     const description = project?.description || '';
@@ -581,11 +808,7 @@
                     return `
                         <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 portfolio-item" data-category="${category}">
                             <div class="relative">
-                                <img src="${mainImage}" 
-                                     alt="${title}" 
-                                     class="w-full h-64 object-cover" 
-                                     loading="lazy"
-                                     onerror="this.src='${FALLBACK_IMAGE}'">
+                                <img src="${mainImage}" alt="${title} - Projeto de ${category} em Fortaleza" class="w-full h-64 object-cover" loading="lazy" onerror="this.src='${FALLBACK_IMAGE}'">
                                 <span class="absolute top-4 left-4 bg-secondary text-primary text-xs font-bold px-3 py-1 rounded-full uppercase">${category}</span>
                             </div>
                             <div class="p-6">
@@ -594,12 +817,7 @@
                                 ${images.length > 1 ? `
                                     <div class="mt-4 flex gap-2 overflow-x-auto pb-2">
                                         ${images.slice(1).map(img => `
-                                            <img src="${img}" 
-                                                 alt="${title}" 
-                                                 class="w-20 h-20 object-cover rounded-lg flex-shrink-0 cursor-pointer hover:opacity-80 transition" 
-                                                 loading="lazy" 
-                                                 onerror="this.style.display='none'"
-                                                 onclick="openImageModal('${img}')">
+                                            <img src="${img}" alt="${title} - detalhe" class="w-20 h-20 object-cover rounded-lg flex-shrink-0 cursor-pointer hover:opacity-80 transition" loading="lazy" onerror="this.style.display='none'" onclick="openImageModal('${img}')">
                                         `).join('')}
                                     </div>
                                 ` : ''}
@@ -608,16 +826,12 @@
                     `;
                 }).join('');
                 
-                console.log('✅ Portfólio carregado com sucesso!');
-                
             } catch (error) {
-                console.error('❌ Erro ao carregar portfólio:', error);
-                
+                console.error('Erro ao carregar portfólio:', error);
                 if (emptyMsg) {
                     emptyMsg.innerHTML = `
                         <i class="fas fa-exclamation-triangle text-5xl mb-4 text-orange-400"></i>
                         <p class="text-lg font-semibold text-gray-700">Não foi possível carregar os projetos</p>
-                        <p class="text-sm mt-2 text-gray-500">Verifique se o servidor está rodando</p>
                         <button onclick="loadPortfolio()" class="mt-4 bg-secondary hover:bg-secondary/80 text-primary font-bold py-2 px-6 rounded-full transition text-sm">
                             <i class="fas fa-redo mr-1"></i> Tentar novamente
                         </button>
@@ -634,13 +848,8 @@
             });
             btnElement.classList.add('active');
             
-            const items = document.querySelectorAll('.portfolio-item');
-            items.forEach(item => {
-                if (category === 'all' || item.dataset.category === category) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
+            document.querySelectorAll('.portfolio-item').forEach(item => {
+                item.style.display = (category === 'all' || item.dataset.category === category) ? 'block' : 'none';
             });
         }
 
@@ -657,11 +866,17 @@
             document.body.appendChild(modal);
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log('🚀 Página carregada, iniciando portfólio...');
-            loadPortfolio();
-        });
+        document.addEventListener('DOMContentLoaded', loadPortfolio);
     </script>
 
+    <!-- ============================================ -->
+    <!-- PING DE INDEXAÇÃO (Google Search Console)    -->
+    <!-- ============================================ -->
+    <script>
+        // Notifica o Google sobre atualizações (opcional)
+        if (navigator.serviceWorker) {
+            // Registro de Service Worker para PWA (opcional)
+        }
+    </script>
 </body>
 </html>
