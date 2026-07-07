@@ -6,30 +6,30 @@
     <!-- ============================================ -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AJ Artes & Decorações | Pintura e Gesso de Alto Padrão em Fortaleza</title>
-    <meta name="description" content="Especialistas em Pintura, Gesso e Acabamentos em Fortaleza. Transformamos ambientes com excelência, organização e entrega garantida. Orçamento grátis!">
+    <title>AJ Artes e Decorações | Pinturas e Acabamentos de Alto Padrão em Fortaleza</title>
+    <meta name="description" content="AJ Artes e Decorações - Especialistas em Pinturas, Gesso e Acabamentos em Fortaleza. Transformamos ambientes com excelência, organização e entrega garantida. Orçamento grátis!">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
     <link rel="canonical" href="https://ajartesedecoracoes.com.br/">
     
     <!-- ============================================ -->
     <!-- OPEN GRAPH / FACEBOOK                        -->
     <!-- ============================================ -->
-    <meta property="og:title" content="AJ Artes & Decorações - Pintura e Gesso de Alto Padrão em Fortaleza">
-    <meta property="og:description" content="Especialistas em Pintura, Gesso e Acabamentos. Transformamos ambientes com excelência, organização e entrega garantida. Orçamento grátis!">
+    <meta property="og:title" content="AJ Artes e Decorações - Pinturas e Acabamentos de Alto Padrão em Fortaleza">
+    <meta property="og:description" content="Especialistas em Pinturas, Gesso e Acabamentos. Transformamos ambientes com excelência, organização e entrega garantida. Orçamento grátis!">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ajartesedecoracoes.com.br/">
     <meta property="og:image" content="https://ajartesedecoracoes.com.br/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="pt_BR">
-    <meta property="og:site_name" content="AJ Artes & Decorações">
+    <meta property="og:site_name" content="AJ Artes e Decorações">
     
     <!-- ============================================ -->
     <!-- TWITTER CARDS                                -->
     <!-- ============================================ -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AJ Artes & Decorações - Pintura e Gesso de Alto Padrão em Fortaleza">
-    <meta name="twitter:description" content="Especialistas em Pintura, Gesso e Acabamentos. Transformamos ambientes com excelência, organização e entrega garantida.">
+    <meta name="twitter:title" content="AJ Artes e Decorações - Pinturas e Acabamentos de Alto Padrão em Fortaleza">
+    <meta name="twitter:description" content="Especialistas em Pinturas, Gesso e Acabamentos. Transformamos ambientes com excelência, organização e entrega garantida.">
     <meta name="twitter:image" content="https://ajartesedecoracoes.com.br/og-image.jpg">
     
     <!-- ============================================ -->
@@ -39,8 +39,8 @@
     {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
-        "name": "AJ Artes & Decorações",
-        "description": "Especialistas em Pintura, Gesso e Acabamentos de Alto Padrão em Fortaleza e Região.",
+        "name": "AJ Artes e Decorações",
+        "description": "Especialistas em Pinturas, Gesso e Acabamentos de Alto Padrão em Fortaleza e Região.",
         "url": "https://ajartesedecoracoes.com.br/",
         "telephone": "+5585986217161",
         "email": "contato@ajartesedecoracoes.com",
@@ -80,7 +80,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     
     <!-- ============================================ -->
     <!-- TAILWIND CONFIG                              -->
@@ -111,12 +111,28 @@
         body { font-family: 'Open Sans', sans-serif; }
         h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
         
-        /* Hero Background com imagem otimizada */
+        /* Hero Background */
         .hero-bg {
             background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)), 
                 url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
             background-size: cover;
             background-position: center;
+        }
+
+        /* Logo Animation */
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+        }
+        .logo-sub {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        .logo-icon {
+            font-size: 1.8rem;
+            line-height: 1;
         }
 
         /* Menu Mobile */
@@ -154,22 +170,8 @@
         #contact-bar {
             transition: transform 0.3s ease;
         }
-        #contact-bar:hover { transform: translateY(-2px); }
 
-        /* Back to Top */
-        #back-to-top { transition: all 0.3s ease; }
-        #back-to-top:hover { transform: translateY(-3px); }
-
-        /* Lazy Load com efeito suave */
-        .portfolio-item img {
-            background-color: #f3f4f6;
-            transition: opacity 0.5s ease;
-        }
-        .portfolio-item img.loaded {
-            opacity: 1;
-        }
-
-        /* Skip to content - acessibilidade e SEO */
+        /* Skip link */
         .skip-link {
             position: absolute;
             top: -100%;
@@ -183,65 +185,66 @@
             font-weight: bold;
             transition: top 0.3s ease;
         }
-        .skip-link:focus {
-            top: 0;
-        }
+        .skip-link:focus { top: 0; }
 
-        /* Breadcrumb oculto para SEO */
-        .breadcrumb-schema {
-            display: none;
+        /* Estilo da logo no navbar */
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .navbar-logo .logo-aj {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: #0F172A;
+            line-height: 1;
+        }
+        .navbar-logo .logo-aj .aj {
+            color: #0F172A;
+        }
+        .navbar-logo .logo-aj .artes {
+            color: #D4AF37;
+        }
+        .navbar-logo .logo-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.55rem;
+            letter-spacing: 1.5px;
+            color: #6B7280;
+            text-transform: uppercase;
+            display: block;
+            margin-top: -2px;
         }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
     <!-- ============================================ -->
-    <!-- SKIP LINK - ACESSIBILIDADE E SEO             -->
+    <!-- SKIP LINK - ACESSIBILIDADE                   -->
     <!-- ============================================ -->
     <a href="#main-content" class="skip-link" aria-label="Pular para o conteúdo principal">
         <i class="fas fa-arrow-down mr-2"></i> Pular para o conteúdo
     </a>
 
     <!-- ============================================ -->
-    <!-- BREADCRUMB ESTRUTURADO (Schema.org)          -->
-    <!-- ============================================ -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Início",
-                "item": "https://ajartesedecoracoes.com.br/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Pintura Profissional",
-                "item": "https://ajartesedecoracoes.com.br/pintura"
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Gesso e Drywall",
-                "item": "https://ajartesedecoracoes.com.br/gesso"
-            }
-        ]
-    }
-    </script>
-
-    <!-- ============================================ -->
-    <!-- NAVBAR                                       -->
+    <!-- NAVBAR COM LOGO CORRETA                      -->
     <!-- ============================================ -->
     <nav class="bg-white shadow-md fixed w-full z-50" role="navigation" aria-label="Menu principal">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
-                <!-- Logo com texto descritivo para SEO -->
-                <a href="#" class="flex-shrink-0 font-heading font-bold text-xl text-primary" aria-label="AJ Artes & Decorações - Início">
-                    AJ<span class="text-secondary"> Artes & Decorações</span>
-                    <span class="sr-only"> - Pintura, Gesso e Acabamentos em Fortaleza</span>
+                <!-- Logo com a identidade visual correta -->
+                <a href="#" class="flex-shrink-0 navbar-logo" aria-label="AJ Artes e Decorações - Início">
+                    <div class="flex items-center gap-2">
+                        <!-- Ícone/Emoji representando a logo -->
+                        <span class="logo-icon text-2xl" aria-hidden="true">🎨</span>
+                        <div>
+                            <span class="logo-aj">
+                                AJ <span class="artes">Artes e Decorações</span>
+                            </span>
+                            <span class="logo-subtitle">Pinturas · Gesso · Acabamentos</span>
+                        </div>
+                    </div>
                 </a>
                 
                 <!-- Links Desktop -->
@@ -273,6 +276,14 @@
         <!-- Menu Mobile -->
         <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100" role="navigation" aria-label="Menu mobile">
             <div class="px-4 py-3 space-y-3">
+                <!-- Logo mobile -->
+                <div class="flex items-center gap-2 pb-2 border-b border-gray-100">
+                    <span class="text-2xl" aria-hidden="true">🎨</span>
+                    <div>
+                        <span class="font-heading font-black text-primary text-lg">AJ <span class="text-secondary">Artes e Decorações</span></span>
+                        <span class="block text-[10px] text-gray-400 font-semibold uppercase tracking-wider">Pinturas · Gesso · Acabamentos</span>
+                    </div>
+                </div>
                 <a href="#diferenciais" class="block font-semibold text-gray-600 hover:text-secondary py-2">Diferenciais</a>
                 <a href="#servicos" class="block font-semibold text-gray-600 hover:text-secondary py-2">Serviços</a>
                 <a href="#portfolio" class="block font-semibold text-gray-600 hover:text-secondary py-2">Portfólio</a>
@@ -291,12 +302,12 @@
     </nav>
 
     <!-- ============================================ -->
-    <!-- CONTENT PRINCIPAL (main-content para skip)   -->
+    <!-- CONTENT PRINCIPAL                            -->
     <!-- ============================================ -->
     <main id="main-content">
 
         <!-- ============================================ -->
-        <!-- BARRA DE CONTATO FIXA (rolagem)              -->
+        <!-- BARRA DE CONTATO FIXA                       -->
         <!-- ============================================ -->
         <div id="contact-bar" class="fixed top-16 left-0 right-0 bg-primary/95 backdrop-blur-sm text-white py-2 px-4 z-40 transform -translate-y-full transition-all duration-500 hidden md:block">
             <div class="max-w-7xl mx-auto flex items-center justify-between text-sm">
@@ -321,21 +332,25 @@
         </div>
 
         <!-- ============================================ -->
-        <!-- HERO SECTION                                 -->
+        <!-- HERO SECTION                                -->
         <!-- ============================================ -->
         <header class="hero-bg pt-24 pb-16 md:pt-32 md:pb-20 px-4 text-white">
             <div class="max-w-7xl mx-auto text-center">
-                <span class="inline-block bg-secondary text-primary font-bold px-4 py-1 rounded-full text-xs md:text-sm uppercase tracking-wider">
-                    Excelência e Organização Garantida
-                </span>
+                <!-- Tag com a marca -->
+                <div class="inline-block bg-secondary/20 backdrop-blur-sm text-secondary font-bold px-6 py-2 rounded-full text-xs md:text-sm uppercase tracking-wider border border-secondary/30 mb-4">
+                    <span class="flex items-center gap-2">
+                        <span aria-hidden="true">🎨</span> AJ Artes e Decorações
+                    </span>
+                </div>
                 
-                <!-- H1 com palavras-chave principais -->
+                <!-- H1 com palavras-chave -->
                 <h1 class="font-heading text-3xl sm:text-4xl md:text-6xl font-extrabold mt-6 leading-tight">
-                    Transformamos Ambientes com <span class="text-secondary">Alto Padrão</span>
+                    <span class="text-secondary">Pinturas</span> e Acabamentos<br>
+                    com <span class="text-secondary">Alto Padrão</span>
                 </h1>
                 
                 <p class="text-base md:text-xl mt-6 max-w-3xl mx-auto text-gray-200">
-                    <strong>Especialistas em Pintura, Gesso e Acabamentos</strong> em Fortaleza e Região. 
+                    A <strong class="text-secondary">AJ Artes e Decorações</strong> é especialista em <strong>Pinturas, Gesso e Acabamentos</strong> em Fortaleza e Região. 
                     Entregamos organização, limpeza e respeito ao seu imóvel. Sem improvisos, atrasos ou retrabalho.
                 </p>
                 
@@ -348,7 +363,7 @@
                     </a>
                 </div>
                 
-                <!-- Indicadores de confiança -->
+                <!-- Indicadores -->
                 <div class="mt-8 flex flex-wrap justify-center gap-4 text-xs md:text-sm text-gray-300">
                     <span class="flex items-center gap-2"><i class="fas fa-check-circle text-secondary" aria-hidden="true"></i> Atendimento Imediato</span>
                     <span class="flex items-center gap-2"><i class="fas fa-check-circle text-secondary" aria-hidden="true"></i> Orçamento sem Compromisso</span>
@@ -358,12 +373,13 @@
         </header>
 
         <!-- ============================================ -->
-        <!-- DIFERENCIAIS                                 -->
+        <!-- DIFERENCIAIS                                -->
         <!-- ============================================ -->
         <section id="diferenciais" class="py-16 md:py-20 bg-white" aria-labelledby="diferenciais-title">
             <div class="max-w-7xl mx-auto px-4">
                 <div class="text-center mb-12 md:mb-16">
-                    <h2 id="diferenciais-title" class="font-heading text-2xl md:text-4xl font-bold text-primary">Por que nos escolher?</h2>
+                    <span class="text-secondary font-bold text-sm uppercase tracking-wider">Por que nos escolher?</span>
+                    <h2 id="diferenciais-title" class="font-heading text-2xl md:text-4xl font-bold text-primary mt-2">Diferenciais <span class="text-secondary">AJ Artes e Decorações</span></h2>
                     <p class="text-gray-600 mt-4 max-w-2xl mx-auto text-sm md:text-base">Sabemos que obras geram transtornos. Por isso, nosso foco é garantir uma experiência segura, limpa e impecável.</p>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
@@ -400,18 +416,19 @@
         </section>
 
         <!-- ============================================ -->
-        <!-- SERVIÇOS                                     -->
+        <!-- SERVIÇOS                                    -->
         <!-- ============================================ -->
         <section id="servicos" class="py-16 md:py-20 bg-gray-50" aria-labelledby="servicos-title">
             <div class="max-w-7xl mx-auto px-4">
                 <div class="text-center mb-12 md:mb-16">
-                    <h2 id="servicos-title" class="font-heading text-2xl md:text-4xl font-bold text-primary">Nossas Especialidades</h2>
+                    <span class="text-secondary font-bold text-sm uppercase tracking-wider">Nossas Especialidades</span>
+                    <h2 id="servicos-title" class="font-heading text-2xl md:text-4xl font-bold text-primary mt-2">Serviços <span class="text-secondary">AJ Artes e Decorações</span></h2>
                     <p class="text-gray-600 mt-4 text-sm md:text-base">Soluções completas para obras residenciais, comerciais e corporativas em Fortaleza.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-                    <!-- Serviço 1 -->
+                    <!-- Serviço 1 - Pintura -->
                     <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
-                        <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pintura Profissional - Serviço de pintura residencial e comercial em Fortaleza" class="w-full h-48 object-cover" loading="lazy" width="800" height="192">
+                        <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pintura Profissional - Serviço de pintura residencial e comercial da AJ Artes e Decorações em Fortaleza" class="w-full h-48 object-cover" loading="lazy" width="800" height="192">
                         <div class="p-6">
                             <h3 class="font-heading text-xl font-bold text-primary mb-3">Pintura Profissional</h3>
                             <ul class="text-gray-600 space-y-2 text-sm">
@@ -422,9 +439,9 @@
                             </ul>
                         </div>
                     </div>
-                    <!-- Serviço 2 -->
+                    <!-- Serviço 2 - Gesso -->
                     <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gesso e Drywall - Forros, sancas e divisórias em Fortaleza" class="w-full h-48 object-cover" loading="lazy" width="800" height="192">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gesso e Drywall - Forros, sancas e divisórias da AJ Artes e Decorações em Fortaleza" class="w-full h-48 object-cover" loading="lazy" width="800" height="192">
                         <div class="p-6">
                             <h3 class="font-heading text-xl font-bold text-primary mb-3">Gesso e Drywall</h3>
                             <ul class="text-gray-600 space-y-2 text-sm">
@@ -435,9 +452,9 @@
                             </ul>
                         </div>
                     </div>
-                    <!-- Serviço 3 -->
+                    <!-- Serviço 3 - Acabamentos -->
                     <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
-                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Acabamentos Especiais - Massa corrida e revestimentos decorativos" class="w-full h-48 object-cover" loading="lazy" width="800" height="192">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Acabamentos Especiais - Massa corrida e revestimentos decorativos da AJ Artes e Decorações" class="w-full h-48 object-cover" loading="lazy" width="800" height="192">
                         <div class="p-6">
                             <h3 class="font-heading text-xl font-bold text-primary mb-3">Acabamentos Especiais</h3>
                             <ul class="text-gray-600 space-y-2 text-sm">
@@ -453,12 +470,13 @@
         </section>
 
         <!-- ============================================ -->
-        <!-- PORTFÓLIO                                    -->
+        <!-- PORTFÓLIO                                   -->
         <!-- ============================================ -->
         <section id="portfolio" class="py-16 md:py-20 bg-white" aria-labelledby="portfolio-title">
             <div class="max-w-7xl mx-auto px-4">
                 <div class="text-center mb-12">
-                    <h2 id="portfolio-title" class="font-heading text-2xl md:text-4xl font-bold text-primary">Nossos Projetos Recentes</h2>
+                    <span class="text-secondary font-bold text-sm uppercase tracking-wider">Nossos Trabalhos</span>
+                    <h2 id="portfolio-title" class="font-heading text-2xl md:text-4xl font-bold text-primary mt-2">Portfólio <span class="text-secondary">AJ Artes e Decorações</span></h2>
                     <p class="text-gray-600 mt-4 text-sm md:text-base">Veja a transformação real dos nossos clientes em Fortaleza.</p>
                 </div>
 
@@ -483,12 +501,13 @@
         </section>
 
         <!-- ============================================ -->
-        <!-- PROCESSO DE TRABALHO                         -->
+        <!-- PROCESSO                                    -->
         <!-- ============================================ -->
         <section id="processo" class="py-16 md:py-20 bg-primary text-white" aria-labelledby="processo-title">
             <div class="max-w-7xl mx-auto px-4">
                 <div class="text-center mb-12 md:mb-16">
-                    <h2 id="processo-title" class="font-heading text-2xl md:text-4xl font-bold">Nossa Metodologia</h2>
+                    <span class="text-secondary font-bold text-sm uppercase tracking-wider">Metodologia</span>
+                    <h2 id="processo-title" class="font-heading text-2xl md:text-4xl font-bold mt-2">Como Trabalhamos</h2>
                     <p class="text-gray-300 mt-4 max-w-2xl mx-auto text-sm md:text-base">"Obra organizada é sinônimo de respeito ao cliente."</p>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 text-center">
@@ -522,20 +541,21 @@
         </section>
 
         <!-- ============================================ -->
-        <!-- DEPOIMENTOS (FAKE - para SEO e confiança)    -->
+        <!-- DEPOIMENTOS                                 -->
         <!-- ============================================ -->
         <section id="depoimentos" class="py-16 md:py-20 bg-gray-50" aria-labelledby="depoimentos-title">
             <div class="max-w-6xl mx-auto px-4">
                 <div class="text-center mb-12">
-                    <h2 id="depoimentos-title" class="font-heading text-2xl md:text-4xl font-bold text-primary">O que nossos clientes dizem</h2>
-                    <p class="text-gray-600 mt-4 text-sm md:text-base">Depoimentos de clientes satisfeitos em Fortaleza e Região.</p>
+                    <span class="text-secondary font-bold text-sm uppercase tracking-wider">Depoimentos</span>
+                    <h2 id="depoimentos-title" class="font-heading text-2xl md:text-4xl font-bold text-primary mt-2">O que nossos <span class="text-secondary">clientes dizem</span></h2>
+                    <p class="text-gray-600 mt-4 text-sm md:text-base">Clientes satisfeitos com os serviços da AJ Artes e Decorações em Fortaleza.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
                     <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
                         <div class="flex text-secondary mb-3">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <p class="text-gray-600 text-sm italic">"Contratei a AJ para pintura do meu apartamento. Serviço impecável, limpeza total e entrega no prazo. Recomendo!"</p>
+                        <p class="text-gray-600 text-sm italic">"Contratei a AJ Artes e Decorações para pintura do meu apartamento. Serviço impecável, limpeza total e entrega no prazo. Recomendo!"</p>
                         <div class="mt-4">
                             <p class="font-bold text-primary">Carlos A.</p>
                             <p class="text-xs text-gray-400">Fortaleza - Aldeota</p>
@@ -555,7 +575,7 @@
                         <div class="flex text-secondary mb-3">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <p class="text-gray-600 text-sm italic">"Reformei a fachada do meu comércio com a AJ. Atendimento diferenciado e resultado surpreendente. Excelente!"</p>
+                        <p class="text-gray-600 text-sm italic">"Reformei a fachada do meu comércio com a AJ Artes e Decorações. Atendimento diferenciado e resultado surpreendente."</p>
                         <div class="mt-4">
                             <p class="font-bold text-primary">Roberto F.</p>
                             <p class="text-xs text-gray-400">Fortaleza - Centro</p>
@@ -566,13 +586,14 @@
         </section>
 
         <!-- ============================================ -->
-        <!-- PERGUNTAS FREQUENTES (FAQ - SEO)            -->
+        <!-- FAQ                                          -->
         <!-- ============================================ -->
         <section id="faq" class="py-16 md:py-20 bg-white" aria-labelledby="faq-title">
             <div class="max-w-4xl mx-auto px-4">
                 <div class="text-center mb-12">
-                    <h2 id="faq-title" class="font-heading text-2xl md:text-4xl font-bold text-primary">Perguntas Frequentes</h2>
-                    <p class="text-gray-600 mt-4 text-sm md:text-base">Tire suas dúvidas sobre nossos serviços de pintura e gesso em Fortaleza.</p>
+                    <span class="text-secondary font-bold text-sm uppercase tracking-wider">Dúvidas</span>
+                    <h2 id="faq-title" class="font-heading text-2xl md:text-4xl font-bold text-primary mt-2">Perguntas <span class="text-secondary">Frequentes</span></h2>
+                    <p class="text-gray-600 mt-4 text-sm md:text-base">Tire suas dúvidas sobre os serviços da AJ Artes e Decorações.</p>
                 </div>
                 <div class="space-y-4">
                     <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
@@ -588,7 +609,7 @@
                         <p class="text-gray-600 text-sm mt-2">O prazo varia conforme o tamanho e complexidade. Em média, apartamentos de 2 quartos levam de 3 a 5 dias.</p>
                     </div>
                     <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
-                        <h3 class="font-heading font-bold text-primary">Vocês fazem limpeza após o serviço?</h3>
+                        <h3 class="font-heading font-bold text-primary">A AJ Artes e Decorações faz limpeza após o serviço?</h3>
                         <p class="text-gray-600 text-sm mt-2">Sim! Nossa equipe realiza limpeza completa após cada etapa e entrega o ambiente impecável.</p>
                     </div>
                 </div>
@@ -596,13 +617,14 @@
         </section>
 
         <!-- ============================================ -->
-        <!-- CONTATO COMPLETO                             -->
+        <!-- CONTATO                                     -->
         <!-- ============================================ -->
         <section id="contato" class="py-16 md:py-20 bg-gray-50" aria-labelledby="contato-title">
             <div class="max-w-6xl mx-auto px-4">
                 <div class="text-center mb-12">
-                    <h2 id="contato-title" class="font-heading text-2xl md:text-4xl font-bold text-primary mb-4">Pronto para valorizar seu imóvel?</h2>
-                    <p class="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">Mais do que acabamento, entregamos valorização, organização e excelência em cada detalhe.</p>
+                    <span class="text-secondary font-bold text-sm uppercase tracking-wider">Contato</span>
+                    <h2 id="contato-title" class="font-heading text-2xl md:text-4xl font-bold text-primary mt-2">Fale com a <span class="text-secondary">AJ Artes e Decorações</span></h2>
+                    <p class="text-gray-600 text-base md:text-lg max-w-2xl mx-auto mt-4">Pronto para valorizar seu imóvel? Mais do que acabamento, entregamos valorização, organização e excelência em cada detalhe.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -613,7 +635,7 @@
                         </div>
                         <h3 class="font-heading font-bold text-lg text-primary mb-2">WhatsApp</h3>
                         <p class="text-gray-600 text-sm mb-4">Resposta rápida e orçamento sem compromisso</p>
-                        <a href="https://wa.me/5585986217161?text=Olá!%20Gostaria%20de%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="inline-block bg-accent hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition w-full">
+                        <a href="https://wa.me/5585986217161?text=Olá!%20Gostaria%20de%20um%20orçamento%20da%20AJ%20Artes%20e%20Decora%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer" class="inline-block bg-accent hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition w-full">
                             <i class="fab fa-whatsapp mr-2"></i> Chamar no WhatsApp
                         </a>
                     </div>
@@ -637,7 +659,7 @@
                         </div>
                         <h3 class="font-heading font-bold text-lg text-primary mb-2">Visita Técnica</h3>
                         <p class="text-gray-600 text-sm mb-4">Agende uma visita gratuita para avaliação</p>
-                        <a href="https://wa.me/5585986217161?text=Olá!%20Gostaria%20de%20agendar%20uma%20visita%20técnica." target="_blank" rel="noopener noreferrer" class="inline-block bg-secondary hover:bg-secondary/90 text-primary font-bold py-3 px-6 rounded-full transition w-full">
+                        <a href="https://wa.me/5585986217161?text=Olá!%20Gostaria%20de%20agendar%20uma%20visita%20técnica%20com%20a%20AJ%20Artes%20e%20Decora%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer" class="inline-block bg-secondary hover:bg-secondary/90 text-primary font-bold py-3 px-6 rounded-full transition w-full">
                             <i class="fas fa-calendar-check mr-2"></i> Agendar Visita
                         </a>
                     </div>
@@ -654,12 +676,22 @@
     </main>
 
     <!-- ============================================ -->
-    <!-- FOOTER                                       -->
+    <!-- FOOTER                                      -->
     <!-- ============================================ -->
     <footer class="bg-primary text-gray-400 py-8" role="contentinfo">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="font-heading font-bold text-white text-lg mb-2">AJ<span class="text-secondary"> Artes & Decorações</span></p>
-            <p class="text-sm mb-3">Pintura, Gesso e Acabamentos de Alto Padrão em Fortaleza</p>
+            <!-- Logo no footer -->
+            <div class="flex items-center justify-center gap-2 mb-3">
+                <span class="text-3xl" aria-hidden="true">🎨</span>
+                <div>
+                    <p class="font-heading font-black text-white text-xl">
+                        AJ <span class="text-secondary">Artes e Decorações</span>
+                    </p>
+                    <span class="text-xs text-gray-500 font-semibold uppercase tracking-wider">Pinturas · Gesso · Acabamentos</span>
+                </div>
+            </div>
+            
+            <p class="text-sm text-gray-400 mb-3">Especialistas em Pinturas, Gesso e Acabamentos de Alto Padrão em Fortaleza</p>
             
             <div class="flex flex-wrap justify-center gap-6 mb-4 social-icons">
                 <a href="https://www.instagram.com/ajartes26" target="_blank" rel="noopener noreferrer" 
@@ -696,9 +728,8 @@
                 </a>
             </div>
             
-            <p class="text-xs md:text-sm">&copy; <span id="current-year"></span> AJ Artes & Decorações - Todos os direitos reservados.</p>
+            <p class="text-xs md:text-sm">&copy; <span id="current-year"></span> AJ Artes e Decorações - Todos os direitos reservados.</p>
             
-            <!-- Link discreto para admin -->
             <a href="/admin" 
                class="block mt-6 text-[9px] leading-none text-primary/30 hover:text-primary/60 transition select-none" 
                style="letter-spacing: 0.5px;"
@@ -711,12 +742,12 @@
     <!-- ============================================ -->
     <!-- BOTÃO FLUTUANTE WHATSAPP                     -->
     <!-- ============================================ -->
-    <a href="https://wa.me/5585986217161?text=Olá!%20Gostaria%20de%20um%20orçamento." target="_blank" rel="noopener noreferrer" aria-label="Fale conosco no WhatsApp" class="fixed bottom-6 right-6 bg-accent hover:bg-green-600 text-white w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-2xl text-2xl md:text-3xl z-50 transition transform hover:scale-110 pulse-animation">
+    <a href="https://wa.me/5585986217161?text=Olá!%20Gostaria%20de%20um%20orçamento%20da%20AJ%20Artes%20e%20Decora%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer" aria-label="Fale conosco no WhatsApp" class="fixed bottom-6 right-6 bg-accent hover:bg-green-600 text-white w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-2xl text-2xl md:text-3xl z-50 transition transform hover:scale-110 pulse-animation">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <!-- ============================================ -->
-    <!-- BOTÃO VOLTAR AO TOPO                         -->
+    <!-- BOTÃO VOLTAR AO TOPO                        -->
     <!-- ============================================ -->
     <button id="back-to-top" class="fixed bottom-24 right-6 bg-primary hover:bg-primary/80 text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg z-40 transition opacity-0 invisible" aria-label="Voltar ao topo da página">
         <i class="fas fa-arrow-up"></i>
@@ -783,7 +814,7 @@
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
         // Portfolio
-        const FALLBACK_IMAGE = 'https://via.placeholder.com/800x600/0F172A/D4AF37?text=Projeto+AJ+Artes';
+        const FALLBACK_IMAGE = 'https://via.placeholder.com/800x600/0F172A/D4AF37?text=AJ+Artes+e+Decora%C3%A7%C3%B5es';
 
         async function loadPortfolio() {
             const grid = document.getElementById('portfolio-grid');
@@ -808,7 +839,7 @@
                     return `
                         <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 portfolio-item" data-category="${category}">
                             <div class="relative">
-                                <img src="${mainImage}" alt="${title} - Projeto de ${category} em Fortaleza" class="w-full h-64 object-cover" loading="lazy" onerror="this.src='${FALLBACK_IMAGE}'">
+                                <img src="${mainImage}" alt="${title} - Projeto da AJ Artes e Decorações em Fortaleza" class="w-full h-64 object-cover" loading="lazy" onerror="this.src='${FALLBACK_IMAGE}'">
                                 <span class="absolute top-4 left-4 bg-secondary text-primary text-xs font-bold px-3 py-1 rounded-full uppercase">${category}</span>
                             </div>
                             <div class="p-6">
@@ -869,14 +900,5 @@
         document.addEventListener('DOMContentLoaded', loadPortfolio);
     </script>
 
-    <!-- ============================================ -->
-    <!-- PING DE INDEXAÇÃO (Google Search Console)    -->
-    <!-- ============================================ -->
-    <script>
-        // Notifica o Google sobre atualizações (opcional)
-        if (navigator.serviceWorker) {
-            // Registro de Service Worker para PWA (opcional)
-        }
-    </script>
 </body>
 </html>
