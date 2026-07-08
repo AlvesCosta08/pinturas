@@ -5,7 +5,9 @@ const router = express.Router();
 
 // SENHA DO ADMIN (Altere para a sua senha real)
 const ADMIN_PASSWORD = 'alves2024'; 
-const JWT_SECRET = 'segredo_super_secreto_alves';
+
+// ✅ CORREÇÃO: Agora usa a variável de ambiente, igual ao portfolio.js
+const JWT_SECRET = process.env.JWT_SECRET || 'segredo_super_secreto_alves';
 
 router.post('/login', async (req, res) => {
     const { password } = req.body;
@@ -17,6 +19,7 @@ router.post('/login', async (req, res) => {
         return res.status(401).json({ error: 'Senha incorreta' });
     }
 
+    // Gera o token com o mesmo segredo
     const token = jwt.sign({ role: 'admin' }, JWT_SECRET, { expiresIn: '7d' });
     res.json({ token });
 });

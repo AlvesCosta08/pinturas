@@ -114,7 +114,7 @@ const authenticate = (req, res, next) => {
         jwt.verify(token, JWT_SECRET);
         next();
     } catch (e) {
-        res.status(401).json({ error: 'Token inválido' });
+        res.status(401).json({ error: 'Token inválido ou expirado' });
     }
 };
 

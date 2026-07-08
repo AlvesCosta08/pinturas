@@ -821,7 +821,8 @@
             const emptyMsg = document.getElementById('portfolio-empty');
 
             try {
-                const res = await fetch('/api/portfolio');
+                // Adicionei ?limit=100 para garantir que busque todos os projetos de uma vez
+                const res = await fetch('/api/portfolio?limit=100');
                 if (!res.ok) throw new Error(`HTTP ${res.status}`);
                 const data = await res.json();
                 let projects = Array.isArray(data) ? data : (data.projects || []);

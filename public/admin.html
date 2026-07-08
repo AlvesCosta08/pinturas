@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Admin - Alves Acabamentos</title>
+    <title>Admin - AJ Artes e Decorações</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .image-preview {
@@ -116,6 +116,27 @@
         const API = '/api';
 
         // ==========================================
+        // FUNÇÃO DE FETCH COM AUTENTICAÇÃO AUTOMÁTICA
+        // ==========================================
+        async function authFetch(url, options = {}) {
+            if (!options.headers) {
+                options.headers = {};
+            }
+            // Injeta o token automaticamente
+            options.headers['Authorization'] = `Bearer ${token}`;
+            
+            const res = await fetch(url, options);
+            
+            // Se o token expirou (401), avisa e faz logout
+            if (res.status === 401) {
+                alert('Sua sessão expirou. Por favor, faça login novamente.');
+                logout();
+                throw new Error('Unauthorized');
+            }
+            return res;
+        }
+
+        // ==========================================
         // LOGIN/LOGOUT
         // ==========================================
         async function login() {
@@ -182,9 +203,9 @@
             }
 
             try {
-                const res = await fetch(`${API}/portfolio`, {
+                // Usando authFetch (não precisa passar o header Authorization aqui)
+                const res = await authFetch(`${API}/portfolio`, {
                     method: 'POST',
-                    headers: { 'Authorization': `Bearer ${token}` },
                     body: formData
                 });
 
@@ -199,7 +220,7 @@
                     alert('❌ Erro: ' + (error.error || 'Erro ao publicar'));
                 }
             } catch (error) {
-                alert('Erro ao publicar projeto');
+                if(error.message !== 'Unauthorized') alert('Erro ao publicar projeto');
                 console.error(error);
             }
         }
@@ -209,7 +230,8 @@
         // ==========================================
         async function loadProjects() {
             try {
-                const res = await fetch(`${API}/portfolio`);
+                // Adicionei ?limit=100 para garantir que busque todos os projetos de uma vez
+                const res = await fetch(`${API}/portfolio?limit=100`);
                 const data = await res.json();
                 const projects = data.projects || data;
                 
@@ -297,9 +319,8 @@
             }
 
             try {
-                const res = await fetch(`${API}/portfolio/${id}`, {
+                const res = await authFetch(`${API}/portfolio/${id}`, {
                     method: 'PUT',
-                    headers: { 'Authorization': `Bearer ${token}` },
                     body: formData
                 });
 
@@ -312,7 +333,7 @@
                     alert('❌ Erro: ' + (error.error || 'Erro ao atualizar'));
                 }
             } catch (error) {
-                alert('Erro ao atualizar projeto');
+                if(error.message !== 'Unauthorized') alert('Erro ao atualizar projeto');
                 console.error(error);
             }
         }
@@ -332,9 +353,8 @@
             }
 
             try {
-                const res = await fetch(`${API}/portfolio/${id}`, {
-                    method: 'DELETE',
-                    headers: { 'Authorization': `Bearer ${token}` }
+                const res = await authFetch(`${API}/portfolio/${id}`, {
+                    method: 'DELETE'
                 });
 
                 if (res.ok) {
@@ -345,7 +365,7 @@
                     alert('❌ Erro: ' + (error.error || 'Erro ao deletar'));
                 }
             } catch (error) {
-                alert('Erro ao deletar projeto');
+                if(error.message !== 'Unauthorized') alert('Erro ao deletar projeto');
                 console.error(error);
             }
         }
@@ -356,9 +376,8 @@
             }
 
             try {
-                const res = await fetch(`${API}/portfolio/${projectId}/images/${imageIndex}`, {
-                    method: 'DELETE',
-                    headers: { 'Authorization': `Bearer ${token}` }
+                const res = await authFetch(`${API}/portfolio/${projectId}/images/${imageIndex}`, {
+                    method: 'DELETE'
                 });
 
                 if (res.ok) {
@@ -369,7 +388,7 @@
                     alert('❌ Erro: ' + (error.error || 'Erro ao deletar imagem'));
                 }
             } catch (error) {
-                alert('Erro ao deletar imagem');
+                if(error.message !== 'Unauthorized') alert('Erro ao deletar imagem');
                 console.error(error);
             }
         }
@@ -380,9 +399,8 @@
             }
 
             try {
-                const res = await fetch(`${API}/portfolio/${projectId}/images/${imageIndex}`, {
-                    method: 'DELETE',
-                    headers: { 'Authorization': `Bearer ${token}` }
+                const res = await authFetch(`${API}/portfolio/${projectId}/images/${imageIndex}`, {
+                    method: 'DELETE'
                 });
 
                 if (res.ok) {
@@ -394,7 +412,7 @@
                     alert('❌ Erro: ' + (error.error || 'Erro ao deletar imagem'));
                 }
             } catch (error) {
-                alert('Erro ao deletar imagem');
+                if(error.message !== 'Unauthorized') alert('Erro ao deletar imagem');
                 console.error(error);
             }
         }
